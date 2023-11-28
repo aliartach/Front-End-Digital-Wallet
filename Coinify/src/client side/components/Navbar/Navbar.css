@@ -1,8 +1,4 @@
-.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+
 
 header {
   background-color: #333333;
@@ -18,7 +14,7 @@ header {
     display: flex;
     gap: 30%;
     font-size: 1.6rem;
-    margin-left: 40rem;
+    margin-left: 18rem;
   }
 
 .N-home {
@@ -45,7 +41,7 @@ header {
 }
 
 .Logo {
-   width: 6%;  
+   width: 7%;  
    margin-left: 10rem;
    
    

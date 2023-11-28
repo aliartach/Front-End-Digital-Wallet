@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import Logo from "../../assets/LOGO1.png";
-import "../styles/Navbar.css";
+import Logo from "../../../assets/LOGO1.png";
+import "../Navbar/Navbar.css";
 
 const Navbar = () => {
   const [collapse, setCollapsed] = useState(true);
@@ -24,8 +24,9 @@ const Navbar = () => {
       <div className="Navbar">
         <div className="header_Links">
           <Link
+          to="/"
             className="N-home"
-            onClick= "scrollToTop"
+            // onClick= "scrollToTop"
           >
             <a href="#">Home</a>
           </Link>

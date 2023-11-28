@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Footer.css";
+import "../Footer/Footer.css";
 
 const Footer = () => {
   return (
@@ -10,6 +10,10 @@ const Footer = () => {
           <div className="contactInfo">
             <div className="box">
               <div className="text">
+                <h3>Phone</h3>
+                <p>000-000-0000</p>
+                <h3>Email</h3>
+                <p>wrub7d78i0e@temporary-mail</p>
                 <h3>Address</h3>
                 <p>
                   402671 Sugar Camp Road,
@@ -20,24 +24,11 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="box">
-              <div className="text">
-                <h3>Phone</h3>
-                <p>000-000-0000</p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="text">
-                <h3>Email</h3>
-                <p>wrub7d78i0e@temporary-mail</p>
-              </div>
-            </div>
           </div>
 
           <div id="Contact" className="contactForm">
             <h2>Contact Us</h2>
             <form>
-              <h2>Send Message</h2>
               <div className="inputBox">
                 <input type="text" name="" required="required" />
                 <span>Full Name</span>

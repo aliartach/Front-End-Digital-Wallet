@@ -18,6 +18,7 @@ margin-top: 3rem;
   opacity: 1;
   transform: translateX(0%);
 }
+
 .bottomSide {
   display: flex;
   gap: 1rem;
@@ -39,18 +40,12 @@ margin-top: 3rem;
   margin-left: 50rem;
 
 }
-.LogoName {
-  font-family: 'Kumar One';
-  font-size: 5rem;
-  margin-left: 8rem;
-  position: relative;
-  z-index: 1;
-}
+
 
 .LogoName {
   font-family: 'Kumar One';
-  font-size: 5rem;
-  margin-left: 19rem;
+  font-size: 4rem;
+  margin-left: 12rem;
   position: relative;
   color: #AA9A49;
 }
@@ -65,17 +60,18 @@ margin-top: 3rem;
 
 .leftsideH {
  color : #333333;
- font-size: 7rem;
+ font-size: 6rem;
  margin: 0;
  padding: 0;
- margin-top: 5rem;
- margin-left: 19rem;
+ margin-top: 2rem;
+ margin-left: 12rem;
  font-weight: bold;
 }
 
 .Rightside {
-  margin-top: 4rem;
-  margin-left: 10rem;
+  margin-top: 2rem;
+  margin-left: 5rem;
+  width: 700px;
   
 }
 .Registerbutton:hover {
@@ -93,7 +89,7 @@ margin-top: 3rem;
   display: flex;
   gap: 4rem;
   margin-bottom: 2rem;
-  margin-left: 19rem;
+  margin-left: 12rem;
 }
 
 .Signinbutton  {
@@ -131,30 +127,30 @@ margin-top: 3rem;
  
 
 
-.Signinbutton a {
+.Signinbutton  {
   text-decoration: none;
   color: #333333;
   background-color: #F0E3E3;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
-.Registerbutton a {
+.Registerbutton  {
   text-decoration: none;
   color: #FCFAF9;
   background-color: #333333;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 .bottomside {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   border-radius: 33px;
   margin-top: 13rem;
-  background-color: #aa9a492a
+  background-color: #f0e3e356
 }
 
 .card:hover {
-  transform: translate3D(0, -1px, 0) scale(1.33);
+  transform: translate3D(0, -1px, 0) scale(1.13);
   transition: transform 0.3s ease-in-out; /* Add transition property */
   transform-origin: center; /* Add transform-origin property */
 }
@@ -189,7 +185,7 @@ margin-top: 3rem;
   font-size: 1rem;
 }
 .card {
-  width: 500px;
+  width: 450px;
   height: 320px;
   padding: 20px;
   margin-left: 4rem;
@@ -197,7 +193,7 @@ margin-top: 3rem;
   margin-bottom: 5rem;
   color: #333333;
   background: linear-gradient(#fcfaf98e, #fcfaf98e) padding-box,
-              linear-gradient(145deg, transparent 15%,#AA9A49, #AA9A49) border-box;
+              linear-gradient(145deg, transparent ,#AA9A49, #AA9A49) border-box;
   border: 2px solid transparent;
   border-radius: 33px;
   display: flex;
