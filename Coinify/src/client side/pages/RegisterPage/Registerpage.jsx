@@ -1,15 +1,18 @@
-import React from 'react';
+// import Switch from "../Switchprop.jsx";
 import '../RegisterPage/Registerpage.css';
-
-function Registerpage() {
+import React, { useState, useEffect } from 'react';
+function Registerpage({ isSignIn, toggle }) {
+ 
   return (
-    <div id="container" className="Signin-Signup">
+  
+    <div id="container" className="Signin-Signup sign-in' 'Signin-Signup sign-up">
       {/* FORM SECTION */}
       <div className="row">
         {/* SIGN UP */}
         <div className="col align-items-center flex-col sign-up">
           <div className="form-wrapper align-items-center">
             <div id='Register' className="form sign-up">
+              
               <div className="input-group">
                 <i className="bx bxs-user"></i>
                 <input type="text" placeholder="First-Name" required="required" />
@@ -120,13 +123,13 @@ function Registerpage() {
 
 export default Registerpage;
 
-function toggle() {
-  const container = document.getElementById('container');
-  container.classList.toggle('sign-in');
-  container.classList.toggle('sign-up');
-}
+// function toggle() {
+//   const container = document.getElementById('container');
+//   container.classList.toggle('sign-in');
+//   container.classList.toggle('sign-up');
+// }
 
-setTimeout(() => {
-  const container = document.getElementById('container');
-  container.classList.add('sign-in');
-}, 200);
+// setTimeout(() => {
+//   const container = document.getElementById('container');
+//   container.classList.add('sign-in');
+// }, 200);

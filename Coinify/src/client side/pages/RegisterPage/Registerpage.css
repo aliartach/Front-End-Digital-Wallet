@@ -166,13 +166,13 @@
     cursor: pointer;
 }
 
-.Signin-Signup.sign-in .form.sign-in,
-.Signin-Signup.sign-in .social-list.sign-in,
-.Signin-Signup.sign-in .social-list.sign-in>div,
-.Signin-Signup.sign-up .form.sign-up,
-.Signin-Signup.sign-up .social-list.sign-up,
-.Signin-Signup.sign-up .social-list.sign-up>div {
-    transform: scale(1);
+.Signin-Signup.sign-in .sign-in .form,
+.Signin-Signup.sign-in .sign-in .social-list,
+.Signin-Signup.sign-in .sign-in .social-list > div,
+.Signin-Signup.sign-up .sign-up .form,
+.Signin-Signup.sign-up .sign-up .social-list,
+.Signin-Signup.sign-up .sign-up .social-list > div {
+  transform: scale(1);
 }
 
 .content-row {

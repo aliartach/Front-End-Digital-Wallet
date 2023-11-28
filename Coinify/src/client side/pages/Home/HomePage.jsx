@@ -3,22 +3,23 @@ import { useLocation } from "react-router-dom";
 import Footer from "../../components/Footer/Footer.jsx";
 import Homeimage from "../../../assets/homepage1.png";
 import "../Home/HomePage.css";
+// import Switch from "../Switchprop.jsx"
 import { Link } from "react-router-dom";
-const HomePage = () => {
+const HomePage = ({  isSignIn, toggle }) => {
   useEffect(() => {
     const homePage = document.querySelector(".HomePage");
     homePage.classList.add("show");
   }, []);
 
-
   return (
     <>
-    
+      
       <link
         href="https://fonts.googleapis.com/css?family=Kumar One"
         rel="stylesheet"
       ></link>
-      <div className="HomePage">
+       <div className="HomePage">
+       {/* <Switch/> */}
         <div id="topside" className="topside">
           <div className="Leftside">
             <p className="leftsideH">
@@ -28,13 +29,13 @@ const HomePage = () => {
             <div className="buttons">
             <button
                 className="Signinbutton"
-                onClick={() => (window.location.href = "/Registerpage#Signin")}
+                onClick={toggle}
               >
                 Sign in
               </button>
               <button
                 className="Registerbutton"
-                onClick={() => (window.location.href = "/Registerpage#Register")}
+                onClick={toggle}
               >
                 Register
               </button>
