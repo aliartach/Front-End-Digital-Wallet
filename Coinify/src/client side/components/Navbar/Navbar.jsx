@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -7,49 +7,72 @@ import Logo from "../../../assets/LOGO1.png";
 import "../Navbar/Navbar.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [collapse, setCollapsed] = useState(true);
   const executeScroll = () => {
-    const element = document.getElementById("Contact");
-    element.scrollIntoView({ behavior: "smooth" });
-    const element2 = document.getElementById("About");
-    element.scrollIntoView({ behavior: "smooth" });
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+    setTimeout(() => {
+      const element = document.getElementById("Contact");
+      element.scrollIntoView({ behavior: "smooth" });
+      const element2 = document.getElementById("About");
+      element2.scrollIntoView({ behavior: "smooth" });
+    }, 10);
+  };
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <header className="header sticky">
-      <img src={Logo} alt="" className="Logo" />
+      <img
+        className="Logo"
+        src={Logo}
+        alt=""
+        onClick={() => {
+          navigate("/", { replace: true });
+        }}
+      />
       <div className="Navbar">
         <div className="header_Links">
           <Link
-          to="/"
+            to="/"
             className="N-home"
-            // onClick= "scrollToTop"
+            onClick={() => {
+              scrollToTop;
+            }}
           >
-            <a href="#">Home</a>
+            <a>Home</a>
           </Link>
 
-          <Link
-            className="N-about"
-            to="#About"
-            name={"aboutus"}
-            onClick={executeScroll}
-          >
-            <a href="#">About</a>
+          <Link to="/#About" name={"aboutus"} onClick={executeScroll}>
+            <a
+              onClick={() => {
+                navigate("/", { replace: true });
+                executeScroll();
+              }}
+              className="N-about"
+            >
+              About
+            </a>{" "}
           </Link>
           <Link
-            to="#Contact"
+            to="/#Contact"
             name={"contactUs"}
             onClick={executeScroll}
             className="N-contact"
           >
-            {" "}
-            ContactUs{" "}
+            <a
+              onClick={() => {
+                navigate("/", { replace: true });
+                executeScroll();
+              }}
+              className="N-contact"
+            >
+              ContactUs
+            </a>
           </Link>
-          <Link className="N-Register" to="/">
-            <a href="#">Register</a>
+
+          <Link className="N-Register" to="/Registerpage">
+            <a>Login</a>
           </Link>
         </div>
         <FontAwesomeIcon
@@ -64,20 +87,49 @@ const Navbar = () => {
             <Link className="N-home" to="/">
               Home
             </Link>
-            <Link className="N-about" to="/">
-              About
+            <Link
+              to="/#About"
+              name={"aboutus"}
+              onClick={executeScroll}
+              className="N-about"
+            >
+              <a
+                onClick={() => {
+                  navigate("/", { replace: true });
+                  executeScroll();
+                }}
+                className="N-about"
+              >
+                About
+              </a>
             </Link>
             <Link
-              to="#Contact"
+              to="/#Contact"
               name={"contactUs"}
               onClick={executeScroll}
               className="N-contact"
             >
-              ContactUs
+              <a
+                onClick={() => {
+                  navigate("/", { replace: true });
+                  executeScroll();
+                }}
+                className="N-contact"
+              >
+                ContactUs
+              </a>
             </Link>
-            <Link className="N-Register" to="/RegisterPage">
+            <button
+              onClick={() => {
+                navigate("/Registerpage", {
+                  replace: true,
+                  state: { givenClass: true },
+                });
+              }}
+              className="Registerbutton"
+            >
               Register
-            </Link>
+            </button>
           </div>
         </nav>
       ) : null}

@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import Footer from "../../components/Footer/Footer.jsx";
 import Homeimage from "../../../assets/homepage1.png";
 import "../Home/HomePage.css";
 // import Switch from "../Switchprop.jsx"
 import { Link } from "react-router-dom";
-const HomePage = ({  isSignIn, toggle }) => {
+const HomePage = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const homePage = document.querySelector(".HomePage");
     homePage.classList.add("show");
@@ -13,13 +15,12 @@ const HomePage = ({  isSignIn, toggle }) => {
 
   return (
     <>
-      
       <link
         href="https://fonts.googleapis.com/css?family=Kumar One"
         rel="stylesheet"
       ></link>
-       <div className="HomePage">
-       {/* <Switch/> */}
+      <div className="HomePage">
+        {/* <Switch/> */}
         <div id="topside" className="topside">
           <div className="Leftside">
             <p className="leftsideH">
@@ -27,15 +28,26 @@ const HomePage = ({  isSignIn, toggle }) => {
             </p>
             <h1 className="LogoName">COINIFY</h1>
             <div className="buttons">
-            <button
+              {" "}
+              <button
+                onClick={() => {
+                  navigate("/Registerpage", {
+                    replace: true,
+                    state: { givenClass: false },
+                  });
+                }}
                 className="Signinbutton"
-                onClick={toggle}
               >
                 Sign in
-              </button>
+              </button>{" "}
               <button
+                onClick={() => {
+                  navigate("/Registerpage", {
+                    replace: true,
+                    state: { givenClass: true },
+                  });
+                }}
                 className="Registerbutton"
-                onClick={toggle}
               >
                 Register
               </button>
