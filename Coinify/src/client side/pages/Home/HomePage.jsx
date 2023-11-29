@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "../../components/Footer/Footer.jsx";
 import Homeimage from "../../../assets/homepage1.png";
+import TForm from '../../components/TransactionForm/TForm.jsx'
 import "../Home/HomePage.css";
 // import Switch from "../Switchprop.jsx"
 import { Link } from "react-router-dom";
-const HomePage = ({  isSignIn, toggle }) => {
+const HomePage = () => {
   useEffect(() => {
     const homePage = document.querySelector(".HomePage");
     homePage.classList.add("show");
@@ -29,13 +30,13 @@ const HomePage = ({  isSignIn, toggle }) => {
             <div className="buttons">
             <button
                 className="Signinbutton"
-                onClick={toggle}
+           
               >
                 Sign in
               </button>
               <button
                 className="Registerbutton"
-                onClick={toggle}
+     
               >
                 Register
               </button>
