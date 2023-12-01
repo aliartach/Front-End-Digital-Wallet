@@ -1,13 +1,14 @@
-import { useState } from 'react'
-
+import React,{ useState } from 'react'
+import SideNavbar from './admin side/components/SideNavBar/SideNavbar'
+import UserHomePage from './client side/pages/userHomePage'
 import './App.css'
 
-function App() {
+const App=()=> {
  
   return (
-    <>
-  
-    </>
+    <div>
+      <UserHomePage/>
+    </div>
   )
 }
 
