@@ -128,7 +128,7 @@ const Navbar = () => {
               }}
               className="Registerbutton"
             >
-              Register
+              Login
             </button>
           </div>
         </nav>
