@@ -37,6 +37,7 @@ const HomePage = () => {
                   });
                 }}
                 className="Signinbutton"
+           
               >
                 Sign in
               </button>{" "}
@@ -48,6 +49,7 @@ const HomePage = () => {
                   });
                 }}
                 className="Registerbutton"
+     
               >
                 Register
               </button>
