@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "../../components/Footer/Footer.jsx";
 import Homeimage from "../../../assets/homepage1.png";
-import TForm from '../../components/TransactionForm/TForm.jsx'
 import "../Home/HomePage.css";
 // import Switch from "../Switchprop.jsx"
 import { Link } from "react-router-dom";
