@@ -11,7 +11,7 @@ const HomeCard = ({children, type, amount }) => {
         <HiDotsVertical className='dotslogo'/>
         </div>
         <p className='balancecard'>{type}</p>
-        <p className='balancecard'>{amount}</p>
+        <p className='balancecard'>${amount}</p>
         
         
         
