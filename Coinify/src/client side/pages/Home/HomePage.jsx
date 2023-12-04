@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import Navbar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import Homeimage from "../../../assets/homepage1.png";
 import "../Home/HomePage.css";
@@ -15,11 +15,14 @@ const HomePage = () => {
 
   return (
     <>
+
       <link
         href="https://fonts.googleapis.com/css?family=Kumar One"
         rel="stylesheet"
       ></link>
       <div className="HomePage">
+      <Navbar />
+
         {/* <Switch/> */}
         <div id="topside" className="topside">
           <div className="Leftside">

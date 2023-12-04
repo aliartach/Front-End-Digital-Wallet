@@ -1,9 +1,9 @@
-import React from 'react'
-import './homecard.css'
+import React from "react";
+import "./homecard.css";
 import { FaWallet } from "react-icons/fa";
 import { HiDotsVertical } from "react-icons/hi";
 
-const HomeCard = ({children, type, amount }) => {
+const HomeCard = ({ children, type, amount }) => {
   return (
     <div className='homecard'>
         <div className='headercard'>
@@ -19,7 +19,7 @@ const HomeCard = ({children, type, amount }) => {
         
         
     </div>
-  )
-}
+  );
+};
 
-export default HomeCard
+export default HomeCard;
