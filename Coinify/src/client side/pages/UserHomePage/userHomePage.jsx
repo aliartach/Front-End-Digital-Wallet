@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Userheader from "../components/home/userheader/userHeader";
-import SidenavBar from "../../admin side/components/SideNavBar/SideNavbar";
-import Homecard from "../components/home/homecard/homecard";
+import Userheader from "../../components/home/userheader/userHeader";
+import SidenavBar from "../../../admin side/components/SideNavBar/SideNavbar";
+import Homecard from "../../components/home/homecard/homecard";
 import { FaWallet } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 import { MdCallReceived } from "react-icons/md";
 import axios from "axios";
+import './userHomePage.css'
 
 const userHomePage = () => {
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ const userHomePage = () => {
     <div className="homepage">
       <SidenavBar />
       <div className="homecontent">
-        <Userheader />
+        <Userheader name={data.firstName} title={"home"} />
         <div>
           <div className="grid-container">
             <div class="grid-row">
@@ -45,7 +46,7 @@ const userHomePage = () => {
             </div>
             <div class="grid-row">
               <div className="grid-item">
-                <Homecard type={"SEND"} amount={data.balanceUSD}>
+                <Homecard type={"SENT"} amount={data.balanceUSD}>
                   <BiSend className="walletlogo" />
                 </Homecard>
               </div>
