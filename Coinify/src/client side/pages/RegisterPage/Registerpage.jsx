@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../RegisterPage/Registerpage.css";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar.jsx";
 
 const RegisterPage = () => {
   const location = useLocation();
@@ -13,6 +14,7 @@ const RegisterPage = () => {
       id="container"
       className={givenClass ? "Signin-Signup sign-up" : "Signin-Signup sign-in"}
     >
+      <Navbar />
       {/* FORM SECTION */}
       <div className="row">
         {/* SIGN UP */}
