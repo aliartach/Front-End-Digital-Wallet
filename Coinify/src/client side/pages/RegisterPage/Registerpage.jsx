@@ -20,6 +20,22 @@ const RegisterPage = () => {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:4000/api/users/1');
+  //       console.log("response",response)
+  //       setData(response.data);
+  //     } catch (error) {
+  //       console.error('Error:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+  // console.log("userData", data)
   
 
   // for the requried fields 
