@@ -1,0 +1,17 @@
+.merchantHomePage {
+display: flex;
+}
+
+.MerchantHomePageRight {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+
+.MercahntCards {
+  display: flex;
+  gap: 4rem;
+  margin-top: 4rem;
+  margin-left: 10rem;
+}
+

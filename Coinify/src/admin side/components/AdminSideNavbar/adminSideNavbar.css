@@ -4,17 +4,21 @@
   width: 100px;
   margin: auto;
   margin-top: 20px;
+  
 }
 .ulsidenavbar {
   list-style: none;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+
+
 }
 .adminSideNavbar {
   min-height: 100vh;
   background-color: #333333;
   width: 15%;
+
 }
 .adminSideNavbar a {
   text-decoration: none;
@@ -23,7 +27,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .ulsidenavbar li {
   font-size: 1.5rem;
@@ -75,4 +79,38 @@
   width: 100%;
   height: 0.5px;
   background-color: #aa9a49;
+}
+
+.navbar-toggle {
+  font-size: 2.5rem;
+  color: #aa9a49;
+  margin-top: 1.5rem;
+  margin-left: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Add transition for smoother effect */
+}
+.gold-line-closed {
+  width: 100%;
+  height: 0.5px;
+  padding-left: 3.5rem;
+  background-color: #aa9a49;
+}
+
+.closed-sidenavbar {
+  width: 20%;
+
+}
+.closed-sidenavbar a {
+  text-decoration: none;
+}
+
+.interdivClosed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 100px;
+  
+}
+.userslogo {
+  margin-left: 0.3rem;
 }

@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import Homeimage from "../../../assets/homepage1.png";
 import "../Home/HomePage.css";
-// import Switch from "../Switchprop.jsx"
 import { Link } from "react-router-dom";
 const HomePage = () => {
   const navigate = useNavigate();
@@ -73,7 +72,7 @@ const HomePage = () => {
               <p className="heading">
                 We make sure your money will be safe 100% gurarantee
               </p>
-              <div className="categories">
+              <div className="categories1">
                 <span>Secure</span>
                 <span>Safe</span>
               </div>
@@ -88,7 +87,7 @@ const HomePage = () => {
               <p className="heading">
                 Your Money will be sent faster than your blue wallet
               </p>
-              <div className="categories">
+              <div className="categories2">
                 <span>Fast</span>
                 <span>Easy</span>
               </div>
@@ -104,7 +103,7 @@ const HomePage = () => {
                 Experience seamless and secure USDT transfers with our platform,
                 ensuring fast and reliable transactions for your digital assets
               </p>
-              <div className="categories">
+              <div className="categories3">
                 <span>Secure</span>
                 <span>Trusted</span>
               </div>

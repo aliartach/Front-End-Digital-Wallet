@@ -28,7 +28,7 @@ const userHomePage = () => {
     <div className="homepage">
       <SidenavBar />
       <div className="homecontent">
-        <Userheader />
+        <Userheader name={"name"} title={"HOME"} />
         <div>
           <div className="grid-container">
             <div class="grid-row">

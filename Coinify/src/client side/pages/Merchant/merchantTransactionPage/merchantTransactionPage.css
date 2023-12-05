@@ -1,0 +1,7 @@
+.merchantHTransactionPage {
+ display: flex;
+}
+.MercahntRightSide {
+ display: flex;
+ flex-direction: column;
+}

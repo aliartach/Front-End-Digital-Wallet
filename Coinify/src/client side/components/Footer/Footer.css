@@ -10,7 +10,7 @@
   background: #333333;
 }
 .contact .content {
-  max-width: 800px;
+  max-width: 700px;
   text-align: center;
 }
 .contact .content h2 {
@@ -68,7 +68,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  width: 40%;
+  width: 30%;
   background: #fcfaf9;
   padding-left: 60px;
   padding-right: 60px;
