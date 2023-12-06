@@ -5,8 +5,10 @@ import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
 import { SlLogout } from "react-icons/sl";
 import { MdHome } from "react-icons/md";
+import { useUser } from "../../../Context/useUser";
 
 const SideNavbar = () => {
+  const { user, setUser } = useUser();
   return (
     <div className="adminsidenavbar">
       <img className="logosidenavbar" src={logo} />

@@ -3,10 +3,12 @@ import "./notFound.css";
 import Footer from "../../../client side/components/Footer/Footer";
 import { Link } from "react-router-dom";
 import AlertLogo from "../../../assets/alertLogo.svg";
+import Navbar from "../../../client side/components/Navbar/Navbar";
 
 const NotFoundPage = () => {
   return (
     <div>
+      <Navbar />
       <div className="pnf-abc">
         <img className="pnf-logo-abc" src={AlertLogo} alt="alert-logo" />
         <h1 className="pnf-title-abc">404</h1>

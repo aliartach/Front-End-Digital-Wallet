@@ -4,10 +4,14 @@ import AdminSideNavbar from "../../components/AdminSideNavbar/adminSideNavbar";
 import UserHeader from "../../../client side/components/home/userheader/userHeader";
 import UsersForm from "../../components/UsersForm/usersForm";
 import axios from "axios";
+import { useUser } from "../../../Context/useUser.jsx";
+
 const AdminUsersPage = () => {
   const [users, setUsers] = useState([]);
   const [merchants, setMerchants] = useState([]);
 
+  const { user, setUser } = useUser();
+  console.log("heelooooo",user)
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -28,7 +32,10 @@ const AdminUsersPage = () => {
 
       <div className="AdminUsersPageContent">
         {" "}
+        
         <UserHeader name={"Admin"} title={"USERS"} />
+        <div>        <h1>Email: {user?.email}</h1>
+</div>
         <UsersForm rows={users} />
       </div>
     </div>

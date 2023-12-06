@@ -9,13 +9,17 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { GiConfirmed } from "react-icons/gi";
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.jsx";
+import { jwtDecode } from "jwt-decode";
+import { useUser } from "../../../Context/useUser.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 /// handle navigation
 const RegisterPage = () => {
   const location = useLocation();
   const [givenClass, setGivenClass] = useState(location.state?.givenClass);
   const navigate = useNavigate();
-
+  const { user, setUser } = useUser();
   // for the radio button
 
   const [email, setEmail] = useState("");
@@ -25,6 +29,14 @@ const RegisterPage = () => {
   const [phone, setPhoneNumber] = useState("");
   const [role, setRole] = useState("");
   const [confirm, setConfirm] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      setUser(decodedToken);
+    }
+  }, []);
 
   // for the requried fields
   const handleSignUp = async () => {
@@ -41,7 +53,7 @@ const RegisterPage = () => {
         phone,
         role,
       });
-      console.log(response);
+
       if (response.status === 201) {
         setFirstName("");
         setLastName("");
@@ -58,6 +70,7 @@ const RegisterPage = () => {
   const handleOptionChange = (event) => {
     setRole(event.target.value);
   };
+
   const handleSignin = async () => {
     try {
       const response = await axios.post(
@@ -67,20 +80,34 @@ const RegisterPage = () => {
           password: password,
         }
       );
-      console.log(response.data);
-      if (response.data.success) {
-        if (
-          response.data.role == "merchant" &&
-          response.data.verified == true
-        ) {
-          navigate("/merchanthomepage");
+      const token = response.data.accessToken;
+      const decodedToken = jwtDecode(token);
+      localStorage.setItem("token", token);
+
+      setUser(decodedToken);
+
+      if (response.data.success && response.data.verified === true) {
+        toast.success(`${decodedToken.firstName} Logged In Successfully!`, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        if (response.data.role == "merchant") {
+          navigate(`/merchanthomepage/`);
         }
         if (response.data.role == "user") {
-          navigate("/userhomepage");
+          navigate(`/userhomepage/`);
         }
         if (response.data.role == "admin") {
-          navigate("/adminHomepage");
+          navigate(`/adminHomepage/`);
         }
+      } else {
+        alert("Error: new user should be verified by the admin");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -225,6 +252,7 @@ const RegisterPage = () => {
                 <div className="input-group">
                   <i className="bx bxs-user"></i>
                   <input
+                    value={email}
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
@@ -236,6 +264,7 @@ const RegisterPage = () => {
                 <div className="input-group">
                   <i className="bx bxs-lock-alt"></i>
                   <input
+                    value={password}
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}

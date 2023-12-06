@@ -6,14 +6,18 @@ import { FaWallet } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 import { MdCallReceived } from "react-icons/md";
 import axios from "axios";
+import { useUser } from "../../Context/useUser";
+
+
 
 const userHomePage = () => {
   const [data, setData] = useState([]);
+  const { user, setUser } = useUser();  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/users/1");
+        const response = await axios.get(`http://localhost:4000/api/users/${user?.id}`);
         console.log("response", response);
         setData(response.data);
       } catch (error) {

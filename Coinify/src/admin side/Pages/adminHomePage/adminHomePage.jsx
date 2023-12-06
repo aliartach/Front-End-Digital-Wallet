@@ -6,16 +6,22 @@ import { FaUsers } from "react-icons/fa";
 import { CiShop } from "react-icons/ci";
 import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
+import { useUser } from "../../../Context/useUser.jsx";
 
 import axios from "axios";
-
 const AdminHomePage = () => {
+  const [admin, setAdmin] = useState([]);
+  const { user, setUser } = useUser();
+  console.log("heelooooo",user)
+
+
   const [users, setUsers] = useState([]);
   const [merchants, setMerchants] = useState([]);
   const [transactions, setTransactions] = useState([]);
   const [promotions, setPromotions] = useState([]);
 
   useEffect(() => {
+
     const fetchUsers = async () => {
       try {
         const response = await axios.get("http://localhost:4000/api/users/");
@@ -44,13 +50,10 @@ const AdminHomePage = () => {
         console.error("Error:", error);
       }
     };
-
     fetchPromotions();
     fetchUsers();
     fetchTransactions();
   }, []);
-  console.log("allUsers", users);
-  console.log("allTransactions", transactions);
   const usersCount = users.filter((user) => user.role === "user").length;
   const merchantsCount = users.filter((user) => user.role === "merchant")
     .length;
@@ -83,7 +86,7 @@ const AdminHomePage = () => {
           </div>
         </div>
         <div className="graph">
-          <h1> This is the admin home page </h1>
+          <h1> This is the admin {user?.id + " " + user?.email} </h1>
         </div>
       </div>
     </div>
