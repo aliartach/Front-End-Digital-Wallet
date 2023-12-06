@@ -9,7 +9,7 @@ import AdminPromotionsPage from "./admin side/Pages/adminPromotionsPage/adminPro
 import AdminUsersPage from "./admin side/Pages/adminUsersPage/adminUsersPage.jsx";
 import AdminTransactionsPage from "./admin side/Pages/adminTransactionsPage/adminTransactionsPage.jsx";
 import NotFoundPage from "./admin side/Pages/NotFoundPage/notFoundPage.jsx";
-import merchantTransactionPage from "./client side/pages/Merchant/merchantTransactionPage/merchantTransactionPage.jsx";
+import MerchantTransactionPage from "./client side/pages/Merchant/merchantTransactionPage/merchantTransactionPage.jsx";
 
 import "./App.css";
 
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/adminPromotionspage" element={<AdminPromotionsPage />}/>
           <Route path="/adminTransactionspage" element={<AdminTransactionsPage />}/>
           <Route path="/merchanthomepage" element={<Merchanthomepage />}/>
-          <Route path="/merchantTransactionPage" element={< merchantTransactionPage/>}/>
+          <Route path="/merchantTransactionPage" element={<MerchantTransactionPage/>}/>
 
 
           <Route path="/*" element={<NotFoundPage />} />

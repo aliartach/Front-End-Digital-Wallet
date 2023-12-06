@@ -29,9 +29,7 @@ function createData(name, code, population, size) {
   return { name, code, population, size, density };
 }
 
-const rows = [];
-
-export default function StickyHeadTable() {
+export default function StickyHeadTable({ rows }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -45,17 +43,13 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: 400 }}>
+    <Paper className="Paper" sx={{ width: "95%", overflow: "hidden" }}>
+      <TableContainer sx={{ maxHeight: 690 }}>
         <Table className="Table" stickyHeader aria-label="sticky table">
           <TableHead>
-            <TableRow>
+            <TableRow className="Cloumns"  hover role="checkbox" tabIndex={-1}>
               {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
+                <TableCell key={column.id} align={column.align}>
                   {column.label}
                 </TableCell>
               ))}
@@ -64,27 +58,21 @@ export default function StickyHeadTable() {
           <TableBody>
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <div key={row.id} className="table-row">
-                          <div className="table-cell">{row.id}</div>
-                          <div className="table-cell">{row.amount}</div>
-                          <div className="table-cell">{row.moneyType}</div>
-                          <div className="table-cell">{row.sender.email}</div>
-                          <div className="table-cell">{row.receiver.email}</div>
-                          <div className="table-cell">
-                            {row.promotion?.promoCode || "N/A"}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}
+              .map((row) => (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                  {columns.map((column) => (
+                    <TableCell key={column.id} align={column.align}>
+                      {column.id === "senderEmail"
+                        ? row.sender?.email || "N/A" // Accessing nested sender email property
+                        : column.id === "receiverEmail"
+                        ? row.receiver?.email || "N/A"
+                        : column.id === "promotion"
+                        ? row.promotion?.promoCode || "N/A"
+                        : row[column.id] || "N/A"}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>

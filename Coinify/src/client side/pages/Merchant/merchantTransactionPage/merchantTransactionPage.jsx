@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from "react";
-import MerchantSideNavbar from '../../../../admin side/components/SideNavBar/SideNavbar.jsx';
+import MerchantSideNavbar from '../../../../admin side/components/MerchantSideNavbar/MerchantSideNavbar.jsx';
 import MercahntHeader from '../../../components/home/userheader/userHeader.jsx'
 import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx"
 import axios from "axios";
 import '../merchantTransactionPage/merchantTransactionPage.css';
 
 
-const MerchantTransactionPage = () => {
+const MerchantTransactionPage = ({rows}) => {
 
   const [transactions, setTransactions] = useState([]);
 
@@ -20,12 +20,14 @@ const MerchantTransactionPage = () => {
         setTransactions(response.data);
       } catch (error) {
         console.error("Error:", error);
+       
       }
-
+    
     };
 
     fetchTransactions();
   }, []);
+  console.log(transactions)
   return (
     <div className="merchantHTransactionPage">
      <MerchantSideNavbar/>    
