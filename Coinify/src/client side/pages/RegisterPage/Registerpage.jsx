@@ -22,8 +22,8 @@ const RegisterPage = () => {
   const { user, setUser } = useUser();
   // for the radio button
 
-  const [email, setEmail] = useState("ali.alahmad.cs@gmail.com");
-  const [password, setPassword] = useState("123");
+  const [email, setEmail] = useState("admin@gmail.com");
+  const [password, setPassword] = useState("admin");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhoneNumber] = useState("");

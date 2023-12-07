@@ -7,10 +7,10 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const getUser = async() => {
+    const getUser = () => {
       const token = localStorage.getItem("token");
       if (token) {
-        const decodedToken = await jwtDecode(token);
+        const decodedToken = jwtDecode(token);
         setUser(decodedToken);
       }
     };
