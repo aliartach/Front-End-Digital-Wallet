@@ -43,8 +43,8 @@ const userHomePage = () => {
                   <FaWallet className="walletlogo" />
                 </Homecard>
               </div>
-            </div>
-            <div class="grid-row">
+            
+            
               <div className="grid-item">
                 <Homecard type={"SENT"} amount={data.balanceUSD}>
                   <BiSend className="walletlogo" />

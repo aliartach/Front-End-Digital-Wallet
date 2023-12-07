@@ -70,7 +70,7 @@ margin-top: 3rem;
 
 .Rightside {
   margin-top: 2rem;
-  margin-left: 5rem;
+  margin-left: 8rem;
   width: 700px;
   
 }
@@ -97,7 +97,7 @@ margin-top: 3rem;
   border: none;
   padding: 1rem;
   font-size: 1rem;
-  width: 10em;
+  width: 7em;
   border-radius: 1rem;
   cursor: pointer;
  }
@@ -115,7 +115,7 @@ margin-top: 3rem;
   border: none;
   padding: 1rem;
   font-size: 1rem;
-  width: 10em;
+  width: 7em;
   border-radius: 1rem;
   cursor: pointer;
  }
@@ -131,14 +131,14 @@ margin-top: 3rem;
   text-decoration: none;
   color: #333333;
   background-color: #F0E3E3;
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 .Registerbutton  {
   text-decoration: none;
   color: #FCFAF9;
   background-color: #333333;
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 .bottomside {
   display: flex;
@@ -242,6 +242,46 @@ margin-top: 3rem;
   margin-top: 0.7rem;
 }
 
+@media only screen and (max-width: 960px) { 
+
+   .Rightside {
+    display: none;
+   }
+   
+   .leftsideH {
+     font-size: 3rem;
+     margin-left: 1rem;
+   }
+   
+   .LogoName {
+    font-size: 3rem;
+    margin-left: 1rem;
+   }
+   
+   .buttons {
+    font-size: 3rem;
+    margin-left: 1rem;
+    width: 70%;
+   }
+   .bottomside {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+   }
+   .card {
+    width: 70%;
+    margin-left: 2.4rem;
+    margin-top: 0;
+
+  }
+  
+   .main-content {
+     margin-bottom: -1rem;
+     padding-top: -1rem;
+   }
+   
+
+}
 
 
 

@@ -23,12 +23,14 @@
   font-size: 1.1em;
   font-weight: 300;
 }
-.container {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+.container 
+{
+	width: 91%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 60px;
+	
 }
 .container .contactInfo {
   width: 50%;

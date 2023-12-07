@@ -1,0 +1,50 @@
+.transfermoneyform {
+    width: 600px;
+    height: 400px;
+    border: solid black 2px;
+}
+.transfermoneyheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.inputmoneytransfer {
+    width: 280px;
+    height: 20px;
+    padding-left: 35px;
+    /* border: solid red 1px; */
+}
+.amount {
+    margin-left: 120px;
+}
+.hrtransfermoneyform {
+    width: 90%;
+    border-bottom: solid black 1.5px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+.note {
+    margin-left: 67px;
+}
+.transfermoneybutton {
+    width: 140px;
+    height: 35px;
+    cursor: pointer;
+}
+.transfermmoneybuttondiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.inputmoneyicon {
+    position: absolute;
+    margin-right: 210px;
+    height: 20px;
+    width: 20px;
+}
+.inputemailicon {
+    position: absolute;
+    margin-right: 90px;
+}

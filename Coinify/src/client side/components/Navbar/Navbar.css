@@ -1,7 +1,7 @@
-header {
-  /* background-color: #333333; */
+.headerNavbar {
+  background-color: #333333;
   display: flex;
-  gap: 25%;
+  gap: 30%;
 }
 .Navbar {
   display: flex;
@@ -91,11 +91,12 @@ header {
   .header_icon {
     display: flex;
     align-items: center;
+    margin-top: 1rem;
   }
   .Logo {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 40%;
     margin: auto;
   }
   .header_mobile_ul {
@@ -129,5 +130,9 @@ header {
 
   .header_mobile_ul a:focus {
     color: #aa9a49;
+  }
+  
+  .Registerbutton {
+    font-size: 2rem;
   }
 }

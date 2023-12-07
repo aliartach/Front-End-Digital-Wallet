@@ -15,13 +15,13 @@ const HomePage = () => {
 
   return (
     <>
-
+    <Navbar />
       <link
         href="https://fonts.googleapis.com/css?family=Kumar One"
         rel="stylesheet"
       ></link>
       <div className="HomePage">
-      <Navbar />
+      
 
         {/* <Switch/> */}
         <div id="topside" className="topside">

@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="header sticky">
+    <header className="headerNavbar sticky">
       <img
         className="Logo"
         src={Logo}
@@ -128,7 +128,7 @@ const Navbar = () => {
               }}
               className="Registerbutton"
             >
-              Register
+              Login
             </button>
           </div>
         </nav>
