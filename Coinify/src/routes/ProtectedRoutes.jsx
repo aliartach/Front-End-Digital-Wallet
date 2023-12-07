@@ -34,6 +34,7 @@ const ProtectedRoute = ({ allowedRoles }) => {
       progress: undefined,
       theme: "dark",
     });
+    localStorage.clear();
     return <Navigate to="/Registerpage" replace />;
   }
 

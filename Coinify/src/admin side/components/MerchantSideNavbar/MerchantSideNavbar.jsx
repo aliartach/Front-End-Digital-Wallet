@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import "./adminSideNavbar.css";
+import "../MerchantSideNavbar/MerchantSideNavbar.css";
 import logo from "../../../../assets/LOGO1.png";
 import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
 import { SlLogout } from "react-icons/sl";
 import { MdHome } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { RiUserSettingsFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
+// Separate component for closed state content
 const ClosedSidebar = () => (
   <div className="closed-sidenavbar">
     <div className="interdivClosed">
       <ul className="ulsidenavbar">
-        <Link to="/adminHomepage">
+        <Link to="/merchanthomepage">
+          {" "}
           <div className="flexflex">
             <li>
               {" "}
@@ -22,15 +23,8 @@ const ClosedSidebar = () => (
           </div>
         </Link>
         <div className="gold-line-closed"></div>
-        <Link to="/adminUserspage">
-          <div className="flexflex">
-            <li>
-              <RiUserSettingsFill className="userslogo" />
-            </li>
-          </div>
-        </Link>
-        <div className="gold-line-closed"></div>
-        <Link to="/adminTransactionspage">
+        <Link to="/merchantTransactionPage">
+          {" "}
           <div className="flexflex">
             <li>
               <GrTransaction className="transactionlogo" />
@@ -38,7 +32,8 @@ const ClosedSidebar = () => (
           </div>
         </Link>
         <div className="gold-line-closed"></div>
-        <Link to="/adminPromotionspage">
+        <Link to="/MerchantPromotionPage">
+          {" "}
           <div className="flexflex">
             <li>
               <BiSolidDiscount className="promotionlogo" />
@@ -63,12 +58,13 @@ const ClosedSidebar = () => (
   </div>
 );
 
-const AdminSideNavbar = () => {
+const MerchantSideNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div className={`adminsidenavbar ${isOpen ? "open" : ""}`}>
       <div className="navbar-toggle" onClick={toggleNavbar}>
@@ -79,7 +75,8 @@ const AdminSideNavbar = () => {
           <img className="logosidenavbar" src={logo} alt="Logo" />
           <div className="interdiv">
             <ul className="ulsidenavbar">
-              <Link to="/adminHomepage">
+              <Link to="/merchanthomepage">
+                {" "}
                 <div className="flexflex">
                   <li>
                     {" "}
@@ -88,15 +85,8 @@ const AdminSideNavbar = () => {
                 </div>
               </Link>
               <div className="gold-line"></div>
-              <Link to="/adminUserspage">
-                <div className="flexflex">
-                  <li>
-                    <RiUserSettingsFill className="userslogo" /> Users
-                  </li>
-                </div>
-              </Link>
-              <div className="gold-line"></div>
-              <Link to="/adminTransactionspage">
+              <Link to="/merchantTransactionPage">
+                {" "}
                 <div className="flexflex">
                   <li>
                     <GrTransaction className="transactionlogo" /> transaction{" "}
@@ -104,7 +94,7 @@ const AdminSideNavbar = () => {
                 </div>
               </Link>
               <div className="gold-line"></div>
-              <Link to="/adminPromotionspage">
+              <Link to="/MerchantPromotionPage">
                 <div className="flexflex">
                   <li>
                     <BiSolidDiscount className="promotionlogo" /> Promotions{" "}
@@ -112,6 +102,7 @@ const AdminSideNavbar = () => {
                 </div>
               </Link>
               <div className="gold-line"></div>
+
               <Link
                 to="/"
                 onClick={() => {
@@ -134,4 +125,4 @@ const AdminSideNavbar = () => {
   );
 };
 
-export default AdminSideNavbar;
+export default MerchantSideNavbar;

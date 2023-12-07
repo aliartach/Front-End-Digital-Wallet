@@ -8,17 +8,16 @@ import { MdCallReceived } from "react-icons/md";
 import axios from "axios";
 import { useUser } from "../../Context/useUser";
 
-
-
 const userHomePage = () => {
   const [data, setData] = useState([]);
-  const { user, setUser } = useUser();  
+  const { user, setUser } = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/users/${user?.id}`);
-        console.log("response", response);
+        const response = await axios.get(
+          `http://localhost:4000/api/users/${user?.id}`
+        );
         setData(response.data);
       } catch (error) {
         console.error("Error:", error);
@@ -26,13 +25,16 @@ const userHomePage = () => {
     };
 
     fetchData();
-  }, []);
-  console.log("userData", data);
+  }, [user]);
+
   return (
     <div className="homepage">
       <SidenavBar />
       <div className="homecontent">
-        <Userheader />
+        <Userheader
+          name={data.firstName + " " + data.lastName}
+          title={"HOME"}
+        />
         <div>
           <div className="grid-container">
             <div class="grid-row">

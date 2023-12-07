@@ -8,7 +8,6 @@ const HomeCard = ({ children, type, amount }) => {
     <div className="homecard">
       <div className="headercard">
         {children}
-        <HiDotsVertical className="dotslogo" />
       </div>
       <p className="balancecard">{type}</p>
       <p className="balancecard">{amount}</p>

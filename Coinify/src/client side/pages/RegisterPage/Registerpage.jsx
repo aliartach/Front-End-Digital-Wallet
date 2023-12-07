@@ -22,8 +22,8 @@ const RegisterPage = () => {
   const { user, setUser } = useUser();
   // for the radio button
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("ali.alahmad.cs@gmail.com");
+  const [password, setPassword] = useState("123");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhoneNumber] = useState("");
@@ -82,11 +82,12 @@ const RegisterPage = () => {
       );
       const token = response.data.accessToken;
       const decodedToken = jwtDecode(token);
-      localStorage.setItem("token", token);
 
-      setUser(decodedToken);
 
       if (response.data.success && response.data.verified === true) {
+        setUser(decodedToken);
+        localStorage.setItem("token", token);
+
         toast.success(`${decodedToken.firstName} Logged In Successfully!`, {
           position: "top-center",
           autoClose: 1000,

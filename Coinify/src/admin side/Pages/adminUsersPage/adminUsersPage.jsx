@@ -11,7 +11,7 @@ const AdminUsersPage = () => {
   const [merchants, setMerchants] = useState([]);
 
   const { user, setUser } = useUser();
-  console.log("heelooooo",user)
+  console.log("heelooooo", user);
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -32,10 +32,11 @@ const AdminUsersPage = () => {
 
       <div className="AdminUsersPageContent">
         {" "}
-        
         <UserHeader name={"Admin"} title={"USERS"} />
-        <div>        <h1>Email: {user?.email}</h1>
-</div>
+        <div>
+          {" "}
+          <h1>Email: {user?.email} </h1>
+        </div>
         <UsersForm rows={users} />
       </div>
     </div>
