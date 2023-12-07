@@ -27,7 +27,7 @@ const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhoneNumber] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("user");
   const [confirm, setConfirm] = useState("");
 
   useEffect(() => {
@@ -39,10 +39,16 @@ const RegisterPage = () => {
   }, []);
 
   // for the requried fields
-  const handleSignUp = async () => {
+  const handleSignUp = async (e) => {
+    e.preventDefault();
     try {
       if (password !== confirm) {
-        return alert("password not match");
+        toast.error("Passwords do not match", {
+          position: "top-center",
+          autoClose: 2000,
+          theme: "dark",
+        });
+        return;
       }
 
       const response = await axios.post("http://localhost:4000/api/users/", {
@@ -62,16 +68,36 @@ const RegisterPage = () => {
         setPassword("");
         setConfirm("");
         setGivenClass(false);
+        toast.success("Registration successful", {
+          position: "top-center",
+          autoClose: 2000,
+          theme: "dark",
+        });
       }
     } catch (error) {
-      alert("Error: Email or Phone number already exists");
+      toast.error("Error: Email or Phone number already exists", {
+        position: "top-center",
+        autoClose: 2000,
+        theme: "dark",
+      });
     }
   };
   const handleOptionChange = (event) => {
     setRole(event.target.value);
   };
 
-  const handleSignin = async () => {
+  const handleSignin = async (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      toast.error("Please fill all the required fields", {
+        position: "top-center",
+        autoClose: 2000,
+        theme: "dark",
+      });
+      return;
+    }
+
     try {
       const response = await axios.post(
         "http://localhost:4000/api/users/signin",
@@ -80,13 +106,12 @@ const RegisterPage = () => {
           password: password,
         }
       );
-      const token = response.data.accessToken;
-      const decodedToken = jwtDecode(token);
-
 
       if (response.data.success && response.data.verified === true) {
-        setUser(decodedToken);
+        const token = response.data.accessToken;
         localStorage.setItem("token", token);
+        const decodedToken = jwtDecode(token);
+        setUser(decodedToken);
 
         toast.success(`${decodedToken.firstName} Logged In Successfully!`, {
           position: "top-center",
@@ -107,11 +132,23 @@ const RegisterPage = () => {
         if (response.data.role == "admin") {
           navigate(`/adminHomepage/`);
         }
+
+        setEmail("");
+        setPassword("");
       } else {
-        alert("Error: new user should be verified by the admin");
+        toast.error("Error: New user should be verified by the admin first", {
+          position: "top-center",
+          autoClose: 2000,
+          theme: "dark",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
+      toast.error("Error: Email or Password not correct", {
+        position: "top-center",
+        autoClose: 2000,
+        theme: "dark",
+      });
     }
   };
 
@@ -129,7 +166,11 @@ const RegisterPage = () => {
           {/* SIGN UP */}
           <div className="col align-items-center flex-col sign-up">
             <div className="form-wrapper align-items-center">
-              <div id="Register" className="form sign-up">
+              <form
+                id="Register"
+                className="form sign-up"
+                onSubmit={handleSignUp}
+              >
                 <div className="input-group">
                   <i className="bx bxs-user"></i>
                   <input
@@ -212,25 +253,23 @@ const RegisterPage = () => {
                   <label>
                     <input
                       type="radio"
-                      value="merchant"
-                      checked={role === "merchant"}
-                      onChange={handleOptionChange}
-                    />
-                    Merchant
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
                       value="user"
                       checked={role === "user"}
                       onChange={handleOptionChange}
                     />
                     User
                   </label>
+                  <label>
+                    <input
+                      type="radio"
+                      value="merchant"
+                      checked={role === "merchant"}
+                      onChange={handleOptionChange}
+                    />
+                    Merchant
+                  </label>
                 </div>
-                <button type="submit" onClick={handleSignUp}>
-                  Sign up
-                </button>
+                <button type="submit">Sign up</button>
                 <p>
                   <span>Already have an account?</span>
                   <b
@@ -242,14 +281,18 @@ const RegisterPage = () => {
                     Sign in here
                   </b>
                 </p>
-              </div>
+              </form>
             </div>
           </div>
           {/* END SIGN UP */}
           {/* SIGN IN */}
           <div className="col align-items-center flex-col sign-in">
             <div className="form-wrapper align-items-center">
-              <div id="Signin" className="form sign-in">
+              <form
+                id="Signin"
+                className="form sign-in"
+                onSubmit={handleSignin}
+              >
                 <div className="input-group">
                   <i className="bx bxs-user"></i>
                   <input
@@ -259,6 +302,7 @@ const RegisterPage = () => {
                     }}
                     type="text"
                     placeholder="Email-Address"
+                    required
                   />
                   <MdEmail className="input-icon" />
                 </div>
@@ -271,10 +315,11 @@ const RegisterPage = () => {
                     }}
                     type="password"
                     placeholder="Password"
+                    required
                   />
                   <RiLockPasswordFill className="input-icon" />
                 </div>
-                <button onClick={handleSignin}>Sign in</button>
+                <button type="submit">Sign in</button>
 
                 <p>
                   <input
@@ -296,7 +341,7 @@ const RegisterPage = () => {
                     Sign up here
                   </b>
                 </p>
-              </div>
+              </form>
             </div>
             <div className="form-wrapper"></div>
           </div>
