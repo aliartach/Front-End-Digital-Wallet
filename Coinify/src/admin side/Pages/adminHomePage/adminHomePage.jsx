@@ -7,17 +7,23 @@ import { FaUsers } from "react-icons/fa";
 import { CiShop } from "react-icons/ci";
 import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
+import { useUser } from "../../../Context/useUser.jsx";
 import UserHeader from "../../../client side/components/home/userheader/userHeader.jsx"
 
 import axios from "axios";
-
 const AdminHomePage = () => {
+  const [admin, setAdmin] = useState([]);
+  const { user, setUser } = useUser();
+  console.log("heelooooo",user)
+
+
   const [users, setUsers] = useState([]);
   const [merchants, setMerchants] = useState([]);
   const [transactions, setTransactions] = useState([]);
   const [promotions, setPromotions] = useState([]);
 
   useEffect(() => {
+
     const fetchUsers = async () => {
       try {
         const response = await axios.get("http://localhost:4000/api/users/");
@@ -46,13 +52,10 @@ const AdminHomePage = () => {
         console.error("Error:", error);
       }
     };
-
     fetchPromotions();
     fetchUsers();
     fetchTransactions();
   }, []);
-  console.log("allUsers", users);
-  console.log("allTransactions", transactions);
   const usersCount = users.filter((user) => user.role === "user").length;
   const merchantsCount = users.filter((user) => user.role === "merchant")
     .length;

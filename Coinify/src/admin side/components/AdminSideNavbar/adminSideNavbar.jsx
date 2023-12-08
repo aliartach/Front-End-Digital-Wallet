@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./adminSideNavbar.css";
 import logo from "../../../../assets/LOGO1.png";
 import { GrTransaction } from "react-icons/gr";
@@ -46,7 +46,12 @@ const ClosedSidebar = () => (
           </div>
         </Link>
         <div className="gold-line-closed"></div>
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={() => {
+            localStorage.clear();
+          }}
+        >
           <div className="flexflex">
             <li>
               <SlLogout className="logoutlogo" />
@@ -65,7 +70,7 @@ const AdminSideNavbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className={`adminsidenavbar ${isOpen ? 'open' : ''}`}>
+    <div className={`adminsidenavbar ${isOpen ? "open" : ""}`}>
       <div className="navbar-toggle" onClick={toggleNavbar}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </div>
@@ -107,7 +112,12 @@ const AdminSideNavbar = () => {
                 </div>
               </Link>
               <div className="gold-line"></div>
-              <Link to="/">
+              <Link
+                to="/"
+                onClick={() => {
+                  localStorage.clear();
+                }}
+              >
                 <div className="flexflex">
                   <li>
                     <SlLogout className="logoutlogo" /> Log out
