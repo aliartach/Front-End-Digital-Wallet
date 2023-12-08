@@ -1,3 +1,7 @@
 .PromotionPage {
 display: flex;
 }
+
+.LeftSide {
+  width: 100%;
+}

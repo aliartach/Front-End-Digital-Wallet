@@ -7,29 +7,24 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import "../SecoundForm/SecoundForm.css";
+import "./SecoundForm.css";
 
 const columns = [
-  { id: "createdAt", label: "Date", minWidth: 130 },
-  { id: "id", label: "TransactionId", minWidth: 130 },
-  { id: "amount", label: "Amount", minWidth: 130, align: "right" },
-  { id: "moneyType", label: "Type", minWidth: 130, align: "right" },
-  { id: "senderEmail", label: "Sender Email", minWidth: 130, align: "right" },
+  { id: "firstName", label: "First Name", minWidth: 130 },
+  { id: "lastName", label: "Last Name", minWidth: 130 },
+  { id: "email", label: "Email", minWidth: 130, align: "right" },
+  { id: "phone", label: "Phone Number", minWidth: 130, align: "right" },
+  { id: "balanceUSD", label: "Balance USD", minWidth: 130, align: "right" },
   {
-    id: "receiverEmail",
-    label: "Receiver Email",
+    id: "balanceUSDT",
+    label: "Balance USDT",
     minWidth: 130,
     align: "right",
   },
-  { id: "promotion", label: "Promotion", minWidth: 130, align: "right" },
+  { id: "verified", label: "Verified", minWidth: 130, align: "right" },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
-
-export default function StickyHeadTable({ rows }) {
+export default function StickyHeadTableUSers({ rows }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -59,16 +54,25 @@ export default function StickyHeadTable({ rows }) {
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.id} data={row}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.id} className="TableBodyRow">
                   {columns.map((column) => (
                     <TableCell key={column.id} align={column.align}>
-                      {column.id === "senderEmail"
-                        ? row.sender?.email || "N/A" // Accessing nested sender email property
-                        : column.id === "receiverEmail"
-                        ? row.receiver?.email || "N/A"
-                        : column.id === "promotion"
-                        ? row.promotion?.promoCode || "N/A"
-                        : row[column.id] || "N/A"}
+                      {column.id === "firstName"
+                        ? row.firstName || "N/A" 
+                        : column.id === "lastName"
+                        ? row.lastName || "N/A"
+                        : column.id === "email"
+                        ? row.email || "N/A"
+                        : column.id === "phone"
+                        ? row.phone || "N/A"
+                        : column.id === "balanceUSD"
+                        ? row.balanceUSD || "N/A"
+                        : column.id === "balanceUSDT"
+                        ? row.balanceUSDT || "N/A"
+                        : column.id === "verified"
+                        ? row.verified ? "Verified" : "N/A"
+                        : row[column.id] || "N/A" 
+                  }
                     </TableCell>
                   ))}
                 </TableRow>

@@ -11,7 +11,7 @@ export default function BasicLineChart({xAxis,series}) {
           data: [2, 5.5, 2, 8.5, 1.5, 5],
         },
       ]}
-      width={1500}
+      width={1000}
       height={430}
     />
     </div>

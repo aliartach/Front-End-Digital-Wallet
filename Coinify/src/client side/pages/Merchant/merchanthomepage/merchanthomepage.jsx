@@ -7,15 +7,17 @@ import MercahntHomeCards from "../../../components/home/homecard/homecard.jsx";
 import { FaWallet } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 import { MdCallReceived } from "react-icons/md";
-
+import { useUser } from "../../../../Context/useUser.jsx";
 const Merchanthomepage = () => {
   const [data, setData] = useState([]);
+  const { user, setUser } = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/users/");
-        console.log("response", response);
+        const response = await axios.get(
+          `http://localhost:4000/api/users/${user?.id}`
+        );
         setData(response.data);
       } catch (error) {
         console.error("Error:", error);
@@ -23,13 +25,13 @@ const Merchanthomepage = () => {
     };
 
     fetchData();
-  }, []);
-  console.log(data);
+  }, [user]);
+
   return (
     <div className="merchantHomePage">
       <MerchantSideNavbar />
       <div className="MerchantHomePageRight">
-        <MercahntHeader name={data.firstName} title={"HOME"} />
+        <MercahntHeader name={data.firstName +" "+ data.lastName} title={"HOME"} />
         <div className="MercahntCards">
           <MercahntHomeCards type={"Balance USD"} amount={data.balanceUSD}>
             {" "}
@@ -48,20 +50,20 @@ const Merchanthomepage = () => {
         </div>
         <h1 className="UserTabel">{data.firstName} Profile</h1>
         <div className="TabelMain">
-        <table className="MerchantTabel">
+          <table className="MerchantTabel">
             <tr className="tr">
               <td className="F-NAME">First Name</td>
               <td className="F-NAME">{data.firstName}</td>
             </tr>
-            <tr  className="tr">
+            <tr className="tr">
               <td className="L-NAME">Last Name</td>
               <td className="L-NAME">{data.lastName} </td>
-            </tr >
+            </tr>
             <tr className="tr">
               <td className="M-Email">Email</td>
               <td className="M-Email">{data.email}</td>
-            </tr >
-            <tr  className="tr">
+            </tr>
+            <tr className="tr">
               <td className="PHONE-N">Phone Number</td>
               <td className="PHONE-N">{data.phone}</td>
             </tr>
