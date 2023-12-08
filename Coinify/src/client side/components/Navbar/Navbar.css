@@ -6,7 +6,6 @@
 .Navbar {
   display: flex;
   align-items: center;
-  z-index: +1;
 }
 .header_Links {
   display: flex;
