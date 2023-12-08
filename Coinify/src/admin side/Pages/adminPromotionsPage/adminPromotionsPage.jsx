@@ -22,7 +22,6 @@ const AdminPromotionsPage = () => {
 
     fetchPromotions();
   }, []);
-  console.log("allPromotions", promotions);
   return (
     <div className="AdminPromotionsPage">
       <AdminSideNavbar />

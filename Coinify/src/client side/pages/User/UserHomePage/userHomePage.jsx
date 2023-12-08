@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Userheader from "../../components/home/userheader/userHeader";
-import SidenavBar from "../../../admin side/components/SideNavBar/SideNavbar";
-import Homecard from "../../components/home/homecard/homecard";
+import Userheader from "../../../components/home/userheader/userHeader";
+import SidenavBar from "../../../../admin side/components/SideNavBar/SideNavbar";
+import Homecard from "../../../components/home/homecard/homecard";
 import { FaWallet } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 import { MdCallReceived } from "react-icons/md";
@@ -29,7 +29,7 @@ const userHomePage = () => {
     <div className="homepage">
       <SidenavBar />
       <div className="homecontent">
-        <Userheader name={data.firstName} title={"home"} />
+        <Userheader name={data.firstName} title={"HOME"} />
         <div>
           <div className="grid-container">
             <div class="grid-row">

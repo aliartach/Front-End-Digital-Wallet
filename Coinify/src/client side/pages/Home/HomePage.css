@@ -130,7 +130,8 @@ margin-top: 3rem;
 .Signinbutton  {
   text-decoration: none;
   color: #333333;
-  background-color: #F0E3E3;
+  background-color: #FCFAF9;
+  border: #AA9A49 solid 3px;
   font-size: 2rem;
 }
 
@@ -146,7 +147,7 @@ margin-top: 3rem;
   gap: 2rem;
   border-radius: 33px;
   margin-top: 13rem;
-  background-color: #f0e3e356
+  background-color: #FCFAF9
 }
 
 .card:hover {
@@ -191,10 +192,8 @@ margin-top: 3rem;
   margin-left: 4rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
-  color: #333333;
-  background: linear-gradient(#fcfaf98e, #fcfaf98e) padding-box,
-              linear-gradient(145deg, transparent ,#AA9A49, #AA9A49) border-box;
-  border: 2px solid transparent;
+  color: #FCFAF9;
+  background: linear-gradient(to bottom, #AA9A49 70%, #333333 30%);
   border-radius: 33px;
   display: flex;
   flex-direction: column;
@@ -210,28 +209,72 @@ margin-top: 3rem;
 .card .header span:first-child {
   font-weight: 600;
   font-size: 1.8rem;
-  color: #AA9A49;
+  color: #333333;
   margin-right: 4px;
 }
 
 .card .heading {
-  font-size: 20px;
+  font-size: 17px;
   margin: 30px 0 16px;
   font-weight: 600;
 }
 
-.card .categories {
+.card .categories1 {
   display: flex;
   gap: 8px;
+  justify-content: flex-start;
+}
+.card .categories2 {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+.card .categories3 {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
 }
 
-.card .categories span {
-  background-color: #AA9A49;
+
+
+.card .categories1 span {
+  background: #AA9A49;
   padding: 5px 10px;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 15px;
   border-radius: 33px;
+  width: 20%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 6.5rem;
+}
+.card .categories2 span {
+  background: #AA9A49;
+  padding: 5px 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 15px;
+  border-radius: 33px;
+  width: 20%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+}
+.card .categories3 span {
+  background: #AA9A49;
+  padding: 5px 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 15px;
+  border-radius: 33px;
+  width: 20%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .card .footerHome {
@@ -239,7 +282,6 @@ margin-top: 3rem;
   color: #AA9A49;
   margin-right: 4px;
   font-size: 1.3rem;
-  margin-top: 0.7rem;
 }
 
 @media only screen and (max-width: 960px) { 

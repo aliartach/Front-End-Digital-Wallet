@@ -14,13 +14,14 @@
 .adminsidenavbar {
   height: 100vh;
   background-color: #333333;
-  width: 300px;
+
 }
 .interdiv {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 100px;
+  width: 300px;
 }
 .ulsidenavbar li {
   font-size: 1.5rem;
@@ -33,20 +34,24 @@
   height: 30px;
   width: 30px;
   margin-right: 30px;
+  margin-left: 0.5rem;
 }
 .flexflex {
   display: flex;
   justify-content: space-between;
   margin-left: 10px;
 }
-.flexflex:hover {
+
+.flexflexf:hover {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: flex-start;
   color: #aa9a49;
 }
-.ulsidenavbar li:hover {
+
+
+.ulsidenavbar li:hover::after,  .ulsidenavbar li:focus::after {
   color: #aa9a49;
   cursor: pointer;
 }
@@ -72,3 +77,38 @@
   height: 0.5px;
   background-color: #aa9a49;
 }
+
+.navbar-toggle {
+  font-size: 2.5rem;
+  color: #aa9a49;
+  margin-top: 1.5rem;
+  margin-left: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Add transition for smoother effect */
+}
+
+.gold-line-closed {
+  width: 100%;
+  height: 0.5px;
+  padding-left: 3.5rem;
+  background-color: #aa9a49;
+}
+
+.closed-sidenavbar {
+  width: 20%;
+
+}
+
+.interdivClosed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+
+
+
+
+
+

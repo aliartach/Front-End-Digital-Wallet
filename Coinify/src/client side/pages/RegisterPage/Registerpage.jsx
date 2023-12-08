@@ -68,11 +68,8 @@ const RegisterPage = () => {
         }
       );
       console.log(response.data);
-      if (response.data.success) {
-        if (
-          response.data.role == "merchant" &&
-          response.data.verified == true
-        ) {
+      if (response.data.success && response.data.verified == true) {
+        if (response.data.role == "merchant") {
           navigate("/merchanthomepage");
         }
         if (response.data.role == "user") {

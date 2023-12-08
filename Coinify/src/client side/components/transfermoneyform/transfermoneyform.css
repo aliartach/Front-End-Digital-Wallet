@@ -1,7 +1,28 @@
 .transfermoneyform {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 600px;
     height: 400px;
-    border: solid black 2px;
+    border: solid #aa9a49 3px;
+    background-color: #333333;
+    border-radius: 25px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: none;
 }
 .transfermoneyheader {
     display: flex;
@@ -11,16 +32,17 @@
 }
 .inputmoneytransfer {
     width: 280px;
-    height: 20px;
+    height: 40px;
     padding-left: 35px;
-    /* border: solid red 1px; */
+    border: #aa9a49;
+    border-radius: 20px;
 }
 .amount {
     margin-left: 120px;
 }
 .hrtransfermoneyform {
     width: 90%;
-    border-bottom: solid black 1.5px;
+    border-bottom: solid #aa9a49 1.5px;
     margin: auto;
     margin-bottom: 50px;
     margin-top: 10px;
@@ -32,6 +54,9 @@
     width: 140px;
     height: 35px;
     cursor: pointer;
+    color: #333333;
+    background-color: #aa9a49;
+    border-radius: 20px;
 }
 .transfermmoneybuttondiv {
     display: flex;
@@ -40,11 +65,38 @@
 }
 .inputmoneyicon {
     position: absolute;
-    margin-right: 210px;
-    height: 20px;
-    width: 20px;
+    margin-right: 190px;
+    height: 25px;
+    width: 25px;
 }
 .inputemailicon {
     position: absolute;
-    margin-right: 90px;
+    margin-right: 70px;
+    height: 25px;
+    width: 25px;
+}
+.h3transfermoney {
+    color: #aa9a49;
+}
+.transactionlogo1 {
+    color: #aa9a49;
+    height: 20px;
+    width: 20px;
+}
+.recieveremail {
+    color: #aa9a49;
+}
+.recieveramount {
+    color: #aa9a49;
+}
+.transfermoneybutton:hover {
+    color: white;
+}
+.backbutton {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    margin-right: 490px;
+    color: #aa9a49;
+    cursor: pointer;
 }

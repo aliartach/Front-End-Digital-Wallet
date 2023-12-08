@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./SideNavbar.css";
+import '../MerchantSideNavbar/MerchantSideNavbar.css';
 import logo from "../../../../assets/LOGO1.png";
 import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
@@ -13,20 +13,20 @@ const ClosedSidebar = () => (
   <div className="closed-sidenavbar">
          <div className="interdivClosed">
             <ul className="ulsidenavbar">
-            <Link to="/userhomepage">  <div className="flexflex">
+            <Link to="/merchanthomepage">  <div className="flexflex">
                 <li>
                   {" "}
                   <MdHome className="homelogo" /> 
                 </li>
               </div></Link>
               <div className="gold-line-closed"></div>
-              <Link to="/UserTranstionPage"> <div className="flexflex">
+              <Link to="/merchantTransactionPage"> <div className="flexflex">
                 <li>
                   <GrTransaction className="transactionlogo" />
                 </li>
               </div></Link>
               <div className="gold-line-closed"></div>
-              <Link to="/UserPromotionPage"> <div className="flexflex">
+              <Link to="/MerchantPromotionPage"> <div className="flexflex">
                 <li>
                   <BiSolidDiscount className="promotionlogo" /> 
                 </li>
@@ -43,7 +43,7 @@ const ClosedSidebar = () => (
   </div>
 );
 
-const SideNavbar = () => {
+const MerchantSideNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -61,20 +61,20 @@ const SideNavbar = () => {
           <img className="logosidenavbar" src={logo} alt="Logo" />
           <div className="interdiv">
             <ul className="ulsidenavbar">
-              <Link to="/userhomepage">  <div className="flexflex">
+              <Link to="/merchanthomepage">  <div className="flexflex">
                 <li>
                   {" "}
                   <MdHome className="homelogo" /> Home
                 </li>
               </div></Link>
               <div className="gold-line"></div>
-             <Link to="/UserTranstionPage"> <div className="flexflex">
+             <Link to="/merchantTransactionPage"> <div className="flexflex">
                 <li>
                   <GrTransaction className="transactionlogo" /> transaction{" "}
                 </li>
               </div></Link>
               <div className="gold-line"></div>
-              <Link to="/UserPromotionPage"><div className="flexflex">
+              <Link to="/MerchantPromotionPage"><div className="flexflex">
                 <li>
                   <BiSolidDiscount className="promotionlogo" /> Promotions{" "}
                 </li>
@@ -96,4 +96,4 @@ const SideNavbar = () => {
   );
 };
 
-export default SideNavbar;
+export default MerchantSideNavbar;
