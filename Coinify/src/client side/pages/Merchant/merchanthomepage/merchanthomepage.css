@@ -87,15 +87,9 @@ td:hover:before {
   opacity: 0.8;
 }
 
-.CardsHeading {
-  margin-left: 50rem;
-  text-transform: uppercase;
-  color: #aa9a49;
-}
-
 .UserTabel {
   margin-left: 50rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
   text-transform: uppercase;
   color: #aa9a49;
 }

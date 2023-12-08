@@ -14,7 +14,7 @@ const Merchanthomepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/users/1");
+        const response = await axios.get("http://localhost:4000/api/users/");
         console.log("response", response);
         setData(response.data);
       } catch (error) {
@@ -30,7 +30,6 @@ const Merchanthomepage = () => {
       <MerchantSideNavbar />
       <div className="MerchantHomePageRight">
         <MercahntHeader name={data.firstName} title={"HOME"} />
-        <h1 className="CardsHeading">{data.firstName} Cards</h1>
         <div className="MercahntCards">
           <MercahntHomeCards type={"Balance USD"} amount={data.balanceUSD}>
             {" "}
@@ -47,7 +46,7 @@ const Merchanthomepage = () => {
             <MdCallReceived className="walletlogo" />
           </MercahntHomeCards>
         </div>
-        <h1 className="UserTabel">{data.firstName} Tabel</h1>
+        <h1 className="UserTabel">{data.firstName} Profile</h1>
         <div className="TabelMain">
         <table className="MerchantTabel">
             <tr className="tr">
