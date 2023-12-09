@@ -5,7 +5,7 @@ import { BiSolidDiscount } from "react-icons/bi";
 import { LuSubtitles } from "react-icons/lu";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
-
+import { useUser } from "../../../Context/useUser.jsx";
 
 const PromotionForm = ({ toggle }) => {
   const [description, setdescription] = useState("");
@@ -13,6 +13,7 @@ const PromotionForm = ({ toggle }) => {
   const [endDate, setendDate] = useState("");
   const [promoCode, setpromoCode] = useState("");
   const [percentage, setpercentage] = useState("");
+  const {userId} = useUser("");
 
   const AddPromotions = async (e) => {
     e.preventDefault();
@@ -25,6 +26,7 @@ const PromotionForm = ({ toggle }) => {
           endDate,
           promoCode,
           percentage,
+          userId,
         }
       );
 
@@ -120,7 +122,7 @@ const PromotionForm = ({ toggle }) => {
               }}
               value={percentage}
               className="percentage"
-              type="text"
+              type="number"
             />
           </div>
         </div>

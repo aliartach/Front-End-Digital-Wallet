@@ -5,7 +5,7 @@ import MercahntHeader from "../../../components/home/userheader/userHeader.jsx";
 import axios from "axios";
 import { useUser } from "../../../../Context/useUser.jsx";
 import AddPromotionsForm from "../../../components/AddPromotion-Form/Promotion-Form.jsx";
-import { ToastContainer, toast } from "react-toastify";
+
 const MerchantPromotionsPage = ({ togglePopup }) => {
  
   const [seen, setSeen] = useState(false);
@@ -44,7 +44,7 @@ const MerchantPromotionsPage = ({ togglePopup }) => {
               Add Promotion
             </button>
           </div>
-          {seen ? <AddPromotionsForm toggle={togglePopup} /> : null}
+          {seen ?  <AddPromotionsForm toggle={togglePopup} userId={user?.id} /> : null}
         </div>
         <MercahntHeader
           name={userData?.firstName + " " + userData?.lastName}
