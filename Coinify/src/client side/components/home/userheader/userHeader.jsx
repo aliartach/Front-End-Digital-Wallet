@@ -2,9 +2,11 @@ import { IoIosNotifications } from "react-icons/io";
 import { MdHome} from "react-icons/md";
 import "../userheader/userHeader.css";
 const UserHeader = ({ name, title }) => {
+
   return (
     <div className="homepage1">
       <header className="headerhomepage">
+      
         <>
           <br></br>
         </>

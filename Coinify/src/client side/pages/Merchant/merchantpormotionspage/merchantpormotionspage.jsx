@@ -5,9 +5,8 @@ import MercahntHeader from "../../../components/home/userheader/userHeader.jsx";
 import axios from "axios";
 import { useUser } from "../../../../Context/useUser.jsx";
 import AddPromotionsForm from "../../../components/AddPromotion-Form/Promotion-Form.jsx";
-
-const MerchantPromotionsPage = ({ togglePopup }) => {
- 
+import PromotionTabel from "../../../components/PromotionTabel/PromotionTabel.jsx";
+const MerchantPromotionsPage = ({ togglePopup, rows }) => {
   const [seen, setSeen] = useState(false);
 
   function togglePopup() {
@@ -15,25 +14,41 @@ const MerchantPromotionsPage = ({ togglePopup }) => {
   }
 
   const { user } = useUser();
-  const [userData, setUserData] = useState(null);
+  const [promotions, setPromotions] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const fetchPromotions = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:4000/api/promotions/"
+        );
+        const filteredPromotions = response.data.filter(
+          (promotion) => promotion.userId === user?.id
+        );
+        setPromotions(filteredPromotions);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    fetchPromotions();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
       try {
         const response = await axios.get(
           `http://localhost:4000/api/users/${user?.id}`
         );
-        setUserData(response.data);
+        setData(response.data);
       } catch (error) {
         console.error("Error:", error);
       }
     };
 
-    if (user) {
-      fetchUserData();
-    }
+    fetchData();
   }, [user]);
- 
+
   return (
     <div className="PromotionPage">
       <MerchantSideNavbar />
@@ -44,12 +59,15 @@ const MerchantPromotionsPage = ({ togglePopup }) => {
               Add Promotion
             </button>
           </div>
-          {seen ?  <AddPromotionsForm toggle={togglePopup} userId={user?.id} /> : null}
+          {seen ? (
+            <AddPromotionsForm toggle={togglePopup} userId={user?.id} />
+          ) : null}
         </div>
         <MercahntHeader
-          name={userData?.firstName + " " + userData?.lastName}
+          name={data.firstName + " " + data.lastName}
           title="Promotion"
         />
+        {promotions.length > 0 && <PromotionTabel rows={promotions} />}
       </div>
     </div>
   );

@@ -6,58 +6,54 @@ import axios from "axios";
 import "../merchantTransactionPage/merchantTransactionPage.css";
 import { useUser } from "../../../../Context/useUser.jsx";
 
-const MerchantTransactionPage = () => {
-  const { user } = useUser();
+const MerchantTransactionPage = ({rows}) => {
+  const {user, setUser} = useUser();
+  const [data, setData] = useState([]);
   const [transactions, setTransactions] = useState([]);
-  const [userData, setUserData] = useState(null);
+ 
 
   useEffect(() => {
     const fetchTransactions = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:4000/api/transactions?userId=${user?.id}`
-        );
-        setTransactions(response.data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
+        try {
+            const response = await axios.get(
+                "http://localhost:4000/api/transactions"
+        
+            );
+            var filter_transactions = response.data.filter(each => each.senderId == user.id || each.receiverId == user.id)
+            setTransactions(filter_transactions);
+        } catch (error) {
+            console.error("Error:", error)
+        }
     };
 
-    if (user) {
-      fetchTransactions();
-    }
-  }, [user]);
+    fetchTransactions();
+}, [user]);
   
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:4000/api/users/${user?.id}`
-        );
-        setUserData(response.data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
 
-    if (user) {
-      fetchUserData();
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4000/api/users/${user?.id}`
+      );
+      setData(response.data);
+    } catch (error) {
+      console.error("Error:", error);
     }
-  }, [user]);
+  };
+
+  fetchData();
+}, [user]);
 
   return (
     <div className="merchantHTransactionPage">
       <MerchantSideNavbar />
       <div className="MercahntRightSide">
         <MercahntHeader
-          name={userData?.firstName + " " + userData?.lastName}
+          name={data.firstName + " " + data.lastName}
           title="Transaction"
         />
-        {transactions.length > 0 ? (
-          <StickyHeadTable rows={transactions} />
-        ) : (
-          <p>No transactions found for this user.</p>
-        )}
+          {transactions.length>0 &&  <StickyHeadTable rows={transactions} />}
       </div>
     </div>
   );

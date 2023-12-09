@@ -32,7 +32,6 @@ const Merchanthomepage = () => {
       <MerchantSideNavbar />
       <div className="MerchantHomePageRight">
         <MercahntHeader name={data.firstName +" "+ data.lastName} title={"HOME"} />
-        <h1 className="CardsHeading">{data.firstName} Cards</h1>
         <div className="MercahntCards">
           <MercahntHomeCards type={"Balance USD"} amount={data.balanceUSD}>
             {" "}

@@ -14,7 +14,14 @@
 .adminsidenavbar {
   height: 100vh;
   background-color: #333333;
+  position: sticky;
+  top: 0;
+}
 
+.closed-sidenavbar {
+  width: 20%;
+  position: sticky;
+  top: 0;
 }
 .interdiv {
   display: flex;
@@ -94,10 +101,7 @@
   background-color: #aa9a49;
 }
 
-.closed-sidenavbar {
-  width: 20%;
 
-}
 
 .interdivClosed {
   display: flex;
