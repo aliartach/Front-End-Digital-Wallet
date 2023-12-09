@@ -13,6 +13,7 @@ import Merchanthomepage from "../client side/pages/Merchant/merchanthomepage/mer
 import MerchantTransactionPage from "../client side/pages/Merchant/merchantTransactionPage/merchantTransactionPage.jsx";
 import MerchantPromotionPage from "../client side/pages/Merchant/merchantpormotionspage/merchantpormotionspage.jsx";
 import Usertransactionpage from "../client side/pages/User/usertransactionpage/usertransactionpage.jsx";
+import Userpromotionpage from "../client side/pages/User/userpromotionpage/userpromotionpage.jsx";
 
 const AppRoutes = () => {
   return (
@@ -29,6 +30,20 @@ const AppRoutes = () => {
       </Route>
       <Route path="/adminHomepage/" element={<AdminHomePage />} />
       <Route path="/UserTranstionPage/" element={<Usertransactionpage />} />
+      <Route path="/usertransactionpage/" element={<Userpromotionpage/>}/>
+
+
+
+      <Route element={<ProtectedRoute allowedRoles={["merchant", "user"]} />}>
+      <Route path="/UserTranstionPage/" element={<Usertransactionpage/>} />
+      </Route>
+      
+
+
+      
+
+
+
 
       <Route path="/adminUserspage" element={<AdminUsersPage />} />
       <Route path="/adminPromotionspage" element={<AdminPromotionsPage />} />

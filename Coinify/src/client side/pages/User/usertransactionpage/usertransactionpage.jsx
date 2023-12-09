@@ -5,10 +5,12 @@ import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx"
 import axios from "axios";
 import Transfermoneyform from "../../../components/transfermoneyform/transfermoneyform.jsx";
 import '../usertransactionpage/usertransactionpage.css'
+import { useUser } from "../../../../Context/useUser.jsx";
 
 
 const Usertransactionpage = ({rows, togglePop}) => {
     const [seen, setSeen] = useState(false)
+    const {user, setUser} = useUser();
     function togglePop () {
         setSeen(!seen);
     }
@@ -19,17 +21,18 @@ const Usertransactionpage = ({rows, togglePop}) => {
         const fetchTransactions = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:4000/api/transactions/"
+                    "http://localhost:4000/api/transactions"
+            
                 );
-                setTransactions(response.data);
+                var filter_transactions = response.data.filter(each => each.senderId == user.id || each.receiverId == user.id)
+                setTransactions(filter_transactions);
             } catch (error) {
                 console.error("Error:", error)
             }
         };
 
         fetchTransactions();
-    }, []);
-    console.log(transactions)
+    }, [user]);
 return (
     <div className="userTransactionPage">
         <SideNavbar />
@@ -41,7 +44,7 @@ return (
                 {seen ? <Transfermoneyform toggle={togglePop} /> : null}
                 <button className="depositbutton" type="submit">Deposit</button>
             </div>
-            <StickyHeadTable rows={transactions} />
+           {transactions.length>0 &&  <StickyHeadTable rows={transactions} />}
         </div>
     </div>
   )

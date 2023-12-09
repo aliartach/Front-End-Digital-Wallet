@@ -32,6 +32,7 @@ const Merchanthomepage = () => {
       <MerchantSideNavbar />
       <div className="MerchantHomePageRight">
         <MercahntHeader name={data.firstName +" "+ data.lastName} title={"HOME"} />
+        <h1 className="CardsHeading">{data.firstName} Cards</h1>
         <div className="MercahntCards">
           <MercahntHomeCards type={"Balance USD"} amount={data.balanceUSD}>
             {" "}
@@ -48,7 +49,7 @@ const Merchanthomepage = () => {
             <BiSend className="walletlogo" />
           </MercahntHomeCards>
         </div>
-        <h1 className="UserTabel">{data.firstName} Profile</h1>
+        <h1 className="UserTabel">{data.firstName} Tabel</h1>
         <div className="TabelMain">
           <table className="MerchantTabel">
             <tr className="tr">
