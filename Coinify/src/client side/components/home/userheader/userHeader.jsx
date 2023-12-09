@@ -13,6 +13,7 @@ const UserHeader = ({ name, title }) => {
       </header>
       <div className="homepagedescription">
         <MdHome className="homelogopage" /> <p>{title}</p>
+        
       </div>
     </div>
   );

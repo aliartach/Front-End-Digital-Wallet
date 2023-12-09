@@ -13,6 +13,7 @@ import Merchanthomepage from "../client side/pages/Merchant/merchanthomepage/mer
 import MerchantTransactionPage from "../client side/pages/Merchant/merchantTransactionPage/merchantTransactionPage.jsx"
 import Transfermoneyform from "../client side/components/transfermoneyform/transfermoneyform.jsx"
 import Usertransactionpage from "../client side/pages/User/usertransactionpage/usertransactionpage.jsx"
+import Userpromotionpage from "../client side/pages/User/userpromotionpage/userpromotionpage.jsx";
 
 const AppRoutes = () => {
   return (
@@ -35,7 +36,7 @@ const AppRoutes = () => {
       <Route element={<ProtectedRoute allowedRoles={["merchant", "user"]} />}>
       <Route path="/UserTranstionPage/" element={<Usertransactionpage/>} />
       </Route>
-      
+      <Route path="/UserPromotionPage" element={<Userpromotionpage/>}/>
 
 
       
@@ -47,10 +48,7 @@ const AppRoutes = () => {
       <Route path="/transfermoney" element={<Transfermoneyform />} />
       <Route path="/adminUserspage" element={<AdminUsersPage />} />
       <Route path="/adminPromotionspage" element={<AdminPromotionsPage />} />
-      <Route
-        path="/adminTransactionspage"
-        element={<AdminTransactionsPage />}
-      />
+      <Route path="/adminTransactionspage" element={<AdminTransactionsPage />} />
 <Route path="/merchanthomepage/" element={<Merchanthomepage />} />
       {/* <Route element={<ProtectedRoute allowedRoles={["merchant"]} />}>
         <Route path="/merchanthomepage/" element={<Merchanthomepage />} />

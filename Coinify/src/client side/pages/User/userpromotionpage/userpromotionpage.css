@@ -1,0 +1,8 @@
+.userpromotionpage {
+    display: flex;
+}
+.userrightside {
+    display: flex;
+ flex-direction: column;
+ width: 100%;
+}

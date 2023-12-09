@@ -98,6 +98,9 @@
   width: 20%;
 
 }
+a {
+ text-decoration: none;
+}
 
 .interdivClosed {
   display: flex;

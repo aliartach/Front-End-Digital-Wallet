@@ -247,6 +247,7 @@ const UserForm = ({ rows }) => {
   return (
     <div className="UserForm">
       <button
+      className="adduseradminpage"
         onClick={() => {
           setEditedUserData({ verified: false, role: "user" });
         }}

@@ -36,6 +36,13 @@ const AdminUsersPage = () => {
       <div className="AdminUsersPageContent">
         {" "}
         <UserHeader name={"Admin"} title={"USERS"} />
+        <div className="logobuttonspacing">
+          <button className="adduseradminpage1" 
+                  onClick={() => { setEditedUserData({ verified: false, role: "user" }); }} >
+                  Add User
+          </button>
+          </div>
+        
         <div>
           {" "}
           <h1>Email: {user?.email} </h1>
