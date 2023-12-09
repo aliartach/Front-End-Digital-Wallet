@@ -28,7 +28,20 @@ const AppRoutes = () => {
         <Route path="/adminHomepage/" element={<AdminHomePage />} />
       </Route> */}
       <Route path="/adminHomepage/" element={<AdminHomePage />} />
+
+
+
+
+      <Route element={<ProtectedRoute allowedRoles={["merchant", "user"]} />}>
       <Route path="/UserTranstionPage/" element={<Usertransactionpage/>} />
+      </Route>
+      
+
+
+      
+
+
+
 
 
       <Route path="/transfermoney" element={<Transfermoneyform />} />
