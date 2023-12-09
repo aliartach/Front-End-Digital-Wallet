@@ -13,6 +13,7 @@ import Merchanthomepage from "../client side/pages/Merchant/merchanthomepage/mer
 import MerchantTransactionPage from "../client side/pages/Merchant/merchantTransactionPage/merchantTransactionPage.jsx"
 import Transfermoneyform from "../client side/components/transfermoneyform/transfermoneyform.jsx"
 import Usertransactionpage from "../client side/pages/User/usertransactionpage/usertransactionpage.jsx"
+import Userpromotionpage from "../client side/pages/User/userpromotionpage/userpromotionpage.jsx";
 
 const AppRoutes = () => {
   return (
@@ -28,7 +29,7 @@ const AppRoutes = () => {
         <Route path="/adminHomepage/" element={<AdminHomePage />} />
       </Route> */}
       <Route path="/adminHomepage/" element={<AdminHomePage />} />
-
+      <Route path="/usertransactionpage/" element={<Userpromotionpage/>}/>
 
 
 
