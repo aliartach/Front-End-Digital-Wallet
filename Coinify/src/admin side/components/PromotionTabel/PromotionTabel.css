@@ -1,0 +1,59 @@
+:root {
+    --primary-color: #333333;
+    --secondary-color: #333333;
+    --black: #333333;
+    --white: #aa9a49;
+    --gray: #efefef;
+    --gray-2: #757575;
+  }
+  
+  .EditPromotionModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 80%;
+    border: solid #aa9a49 3px;
+    background-color: #333333;
+    opacity: 0.98;
+    border-radius: 25px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-group-admin-promotion {
+    position: relative;
+    width: 100%;
+    margin: 1.5rem 0; /* Increase the margin value */
+    display: flex;
+    gap:9rem;
+  }
+  
+  .input-icon-admin-promotion {
+    margin-left: 1rem;
+    margin-top: 1.22rem;
+    font-size: 20px;
+    color: #333333;
+    position: absolute;
+  }
+  
+  
+  
+  .input-group-admin-promotion input {
+    width: 100%; 
+    padding: 1.2rem 3rem; 
+    font-size: 1rem;
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    border: 0.125rem solid var(--white);
+    outline: none;
+  }
+  
+  .input-group-admin-promotion input:focus {
+    border: 0.125rem solid var(--primary-color);
+  }
+  

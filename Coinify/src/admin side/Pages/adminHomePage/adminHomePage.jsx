@@ -2,28 +2,24 @@ import React, { useState, useEffect } from "react";
 import "./adminHomePage.css";
 import AdminSideNavbar from "../../components/AdminSideNavbar/adminSideNavbar";
 import HomeCard from "../../../client side/components/home/homecard/homecard";
-import Line from "../../components/Line-Graph/Line.jsx"
+import Line from "../../components/Line-Graph/Line.jsx";
 import { FaUsers } from "react-icons/fa";
 import { CiShop } from "react-icons/ci";
 import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
 import { useUser } from "../../../Context/useUser.jsx";
-import UserHeader from "../../../client side/components/home/userheader/userHeader.jsx"
+import UserHeader from "../../../client side/components/home/userheader/userHeader.jsx";
 
 import axios from "axios";
 const AdminHomePage = () => {
   const [admin, setAdmin] = useState([]);
   const { user, setUser } = useUser();
-  console.log("heelooooo",user)
-
-
   const [users, setUsers] = useState([]);
   const [merchants, setMerchants] = useState([]);
   const [transactions, setTransactions] = useState([]);
   const [promotions, setPromotions] = useState([]);
 
   useEffect(() => {
-
     const fetchUsers = async () => {
       try {
         const response = await axios.get("http://localhost:4000/api/users/");
@@ -64,7 +60,7 @@ const AdminHomePage = () => {
     <div className="adminHomePage">
       <AdminSideNavbar />
       <div className="adminHomePageContent">
-      <UserHeader name={"admin"} title={"HOME"} />
+        <UserHeader name={"admin"} title={"HOME"} />
         <div className="adminHomeCards">
           <div className="grid-item">
             <HomeCard type={"USERS"} amount={usersCount}>
@@ -89,8 +85,8 @@ const AdminHomePage = () => {
           </div>
         </div>
         <div className="graph">
-        <h1 className="MiddleHeader">Transations all Time movement</h1>
-        <Line/>
+          <h1 className="MiddleHeader">Transations all Time movement</h1>
+          <Line />
         </div>
       </div>
     </div>

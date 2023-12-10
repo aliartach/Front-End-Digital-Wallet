@@ -289,7 +289,7 @@ const TransactionForm = ({ rows }) => {
                   />
                   <MdEmail className="input-icon-admin-transaction" />
                 </div>
-                <div className="input-group-admin-user">
+                <div className="input-group-admin-transaction">
                   <label>
                     <input
                       type="radio"
