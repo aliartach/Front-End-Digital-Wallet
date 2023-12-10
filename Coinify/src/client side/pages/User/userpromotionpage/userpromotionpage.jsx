@@ -23,4 +23,4 @@ const userpromotionpage = (rows) => {
   )
 }
 
-export default userpromotionpage
+export default userpromotionpage;
