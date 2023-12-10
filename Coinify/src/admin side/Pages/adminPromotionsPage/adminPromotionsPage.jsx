@@ -49,7 +49,7 @@ const AdminPromotionsPage = () => {
             <PromotionForm toggle={togglePopup} userId={user?.id} newPromotions={newPromotion} />
           ) : null}
         </div>        <UserHeader name={"admin"} title={"PROMOTIONS"} />
-        <h1>This is the PROMOTIONS admin Page</h1>
+        {/* <h1>This is the PROMOTIONS admin Page</h1> */}
         {/* <PromotionsForm rows={promotions}/> */}
 
         {promotions.length>0 && <PromotionTabel rows={promotions}/> }

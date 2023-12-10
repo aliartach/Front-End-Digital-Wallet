@@ -45,7 +45,7 @@ const AdminUsersPage = () => {
         
         <div>
           {" "}
-          <h1>Email: {user?.email} </h1>
+          {/* <h1>Email: {user?.email} </h1> */}
         </div>
         {/* <UsersForm rows={users} /> */}
         {/* <StickyHeadTableUSers rows={users} /> */}
