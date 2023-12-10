@@ -4,6 +4,10 @@ import MUIDataTable from "mui-datatables";
 export default function StickyHeadTable({ rows }) {
   const [data, setData] = useState(rows);
 
+  useEffect(() => {
+setData(rows);
+  }, [rows]);
+
   const columns = [
     {
       name: "date",

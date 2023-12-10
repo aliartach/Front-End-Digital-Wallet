@@ -6,16 +6,29 @@ import axios from "axios";
 import Transfermoneyform from "../../../components/transfermoneyform/transfermoneyform.jsx";
 import "../usertransactionpage/usertransactionpage.css";
 import { useUser } from "../../../../Context/useUser.jsx";
+import DepositMoneyform from "../../../components/DepositMoneyForm/depositForm.jsx";
 
 const Usertransactionpage = ({ rows, togglePop }) => {
   const [seen, setSeen] = useState(false);
+  const [depositForm, setDepositForm] = useState(false);
+
+  const [ref, setRef] = useState("refresh");
+  const [data, setData] = useState();
+  const [transactions, setTransactions] = useState([]);
   const { user, setUser } = useUser();
   function togglePop() {
     setSeen(!seen);
+    setDepositForm(false)
   }
-
-  const [transactions, setTransactions] = useState([]);
-
+  function togglePopDeposit() {
+    setDepositForm(!depositForm);
+    setSeen(false)
+  }
+  const refresh = (r) => {
+    setRef(ref + r);
+    setSeen(false);
+  };
+  console.log("refresh=", ref);
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
@@ -32,9 +45,23 @@ const Usertransactionpage = ({ rows, togglePop }) => {
         console.error("Error:", error);
       }
     };
+    const fetchData = async () => {
+      try {
+        if (user?.id) {
+          const response = await axios.get(
+            `http://localhost:4000/api/users/${user.id}`
+          );
+          setData(response.data);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+    fetchData();
 
     fetchTransactions();
-  }, [user]);
+  }, [user, ref]);
   return (
     <div className="userTransactionPage">
       <SideNavbar />
@@ -50,10 +77,26 @@ const Usertransactionpage = ({ rows, togglePop }) => {
               Transfer
             </button>
           </div>
-          {seen ? <Transfermoneyform toggle={togglePop} /> : null}
-          <button className="depositbutton" type="submit">
+          {seen ? (
+            <Transfermoneyform
+              toggle={togglePop}
+              userData={data}
+              refreshPage={refresh}
+            />
+          ) : null}
+
+          
+          <button className="depositbutton"  onClick={togglePopDeposit}>
             Deposit
           </button>
+          {depositForm ? (
+            <DepositMoneyform
+              toggle={togglePopDeposit}
+              userData={data}
+              refreshPage={refresh}
+              money="usd"
+            />
+          ) : null}
         </div>
         {transactions.length > 0 && <StickyHeadTable rows={transactions} />}
       </div>
