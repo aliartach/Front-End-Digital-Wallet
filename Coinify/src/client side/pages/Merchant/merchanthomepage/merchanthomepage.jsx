@@ -38,7 +38,7 @@ const Merchanthomepage = () => {
             {" "}
             <FaWallet className="walletlogo" />{" "}
           </MercahntHomeCards>
-          <MercahntHomeCards type={"Balance USDT"} amount={data.balanceUSD}>
+          <MercahntHomeCards type={"Balance USDT"} amount={data.balanceUSDT}>
             {" "}
             <FaWallet className="walletlogo" />{" "}
           </MercahntHomeCards>
