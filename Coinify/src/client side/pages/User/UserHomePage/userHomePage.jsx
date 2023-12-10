@@ -16,10 +16,11 @@ const userHomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        if(user.id){
         const response = await axios.get(
           `http://localhost:4000/api/users/${user?.id}`
         );
-        setData(response.data);
+        setData(response.data);}
       } catch (error) {
         console.error("Error:", error);
       }

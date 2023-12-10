@@ -59,6 +59,7 @@ const ClosedSidebar = () => (
 );
 
 const MerchantSideNavbar = () => {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -89,7 +90,7 @@ const MerchantSideNavbar = () => {
                 {" "}
                 <div className="flexflex">
                   <li>
-                    <GrTransaction className="transactionlogo" /> transaction{" "}
+                    <GrTransaction className="transactionlogo" /> Transaction{" "}
                   </li>
                 </div>
               </Link>

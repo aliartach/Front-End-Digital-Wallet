@@ -1,10 +1,10 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import SideNavbar from "../../../../admin side/components/SideNavBar/SideNavbar.jsx";
 import UserHeader from "../../../components/home/userheader/userHeader";
-import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx"
+import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx";
 import axios from "axios";
 import Transfermoneyform from "../../../components/transfermoneyform/transfermoneyform.jsx";
-import '../usertransactionpage/usertransactionpage.css'
+import "../usertransactionpage/usertransactionpage.css";
 import { useUser } from "../../../../Context/useUser.jsx";
 
 
@@ -77,7 +77,7 @@ return (
            
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Usertransactionpage
+export default Usertransactionpage;

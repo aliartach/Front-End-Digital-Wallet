@@ -15,10 +15,11 @@ const Merchanthomepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        if(user?.id){
         const response = await axios.get(
-          `http://localhost:4000/api/users/${user?.id}`
+          `http://localhost:4000/api/users/${user.id}`
         );
-        setData(response.data);
+        setData(response.data);}
       } catch (error) {
         console.error("Error:", error);
       }
@@ -32,7 +33,6 @@ const Merchanthomepage = () => {
       <MerchantSideNavbar />
       <div className="MerchantHomePageRight">
         <MercahntHeader name={data.firstName +" "+ data.lastName} title={"HOME"} />
-        {/* <h1 className="CardsHeading">{data.firstName}</h1> */}
         <div className="MercahntCards">
           <MercahntHomeCards type={"Balance USD"} amount={data.balanceUSD}>
             {" "}
@@ -49,7 +49,7 @@ const Merchanthomepage = () => {
             <BiSend className="walletlogo" />
           </MercahntHomeCards>
         </div>
-        <h1 className="UserTabel">{data.firstName}'s Profile</h1>
+        <h1 className="UserTabel">{data.firstName} Tabel</h1>
         <div className="TabelMain">
           <table className="MerchantTabel">
             <tr className="tr">

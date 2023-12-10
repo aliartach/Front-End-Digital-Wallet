@@ -4,6 +4,10 @@
     width: 100px;
     margin: auto;
     margin-top: 20px;
+
+  }
+  a {
+    text-decoration: none;
   }
   .ulsidenavbar {
     list-style: none;
@@ -14,14 +18,23 @@
   .adminsidenavbar {
     height: 100vh;
     background-color: #333333;
-  
+    position: sticky;
+    top: 0;
   }
+  
+  .closed-sidenavbar {
+    width: 20%;
+    position: sticky;
+    top: 0;
+  }
+
   .interdiv {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 100px;
     width: 300px;
+   
   }
   .ulsidenavbar li {
     font-size: 1.5rem;
@@ -84,7 +97,8 @@
     margin-top: 1.5rem;
     margin-left: 0.9rem;
     cursor: pointer;
-    transition: color 0.3s ease; /* Add transition for smoother effect */
+    transition: color 0.3s ease;
+    /* Add transition for smoother effect */
   }
   
   .gold-line-closed {
@@ -94,17 +108,35 @@
     background-color: #aa9a49;
   }
   
-  .closed-sidenavbar {
-    width: 20%;
-  
-  }
   
   .interdivClosed {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 100px;
+   
   }
+
+  /* @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
+    }
+  }
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(100px);
+              transform: translateX(100px);
+    }
+  } */
   
   
   
