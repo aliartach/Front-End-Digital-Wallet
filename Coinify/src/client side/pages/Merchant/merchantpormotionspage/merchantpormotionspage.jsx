@@ -77,7 +77,7 @@ const MerchantPromotionsPage = ({ togglePopup, rows }) => {
           name={data.firstName + " " + data.lastName}
           title="Promotion"
         />
-        {promotions.length > 0 && <PromotionTabel rows={promotions} />}
+        {promotions.length > 0 && <PromotionTabel  rows={promotions} />}
       </div>
     </div>
   );
