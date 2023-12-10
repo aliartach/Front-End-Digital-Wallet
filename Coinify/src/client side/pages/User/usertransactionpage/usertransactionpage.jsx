@@ -61,7 +61,7 @@ return (
         <SideNavbar />
         <div className="userrightside">
 
-        <UserHeader name={data.firstName} title={"TRANSACTIONS"} />
+        <UserHeader name={data.firstName + " " + data.lastName} title={"TRANSACTIONS"} />
 
 
           
@@ -76,7 +76,6 @@ return (
            
            
         </div>
-        {data.firstName}
     </div>
   )
 }
