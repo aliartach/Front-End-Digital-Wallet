@@ -56,6 +56,25 @@ const AdminHomePage = () => {
   const merchantsCount = users.filter((user) => user.role === "merchant")
     .length;
 
+  const last7Days = [];
+  for (let i = 0; i < 7; i++) {
+    const date = new Date();
+    date.setDate(date.getDate() - i);
+    last7Days.push(date.toISOString().slice(0, 10));
+  }
+  const transactionCountByDay = {};
+  for (const date of last7Days) {
+    transactionCountByDay[date] = 0;
+  }
+  for (const transaction of transactions) {
+    const transactionDate = transaction.date.slice(0, 10);
+    if (transactionCountByDay.hasOwnProperty(transactionDate)) {
+      transactionCountByDay[transactionDate]++;
+    }
+  }
+  const xAxis = [{ scaleType: "point", data: last7Days.reverse() }];
+  const series = [{ data: Object.values(transactionCountByDay).reverse() }];
+
   return (
   <div className="adminHomePage">
    <AdminSideNavbar />
@@ -85,8 +104,8 @@ const AdminHomePage = () => {
           </div>
         </div>
         <div className="graph">
-          <h1 className="MiddleHeader">Transations all Time movement</h1>
-          <Line />
+          <h1 className="MiddleHeader">Transactions for the last 7 days</h1>
+          <Line xAxis={xAxis} series={series} />
         </div>
       </div>
     </div>

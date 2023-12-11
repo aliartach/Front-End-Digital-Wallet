@@ -18,11 +18,11 @@ const Usertransactionpage = ({ rows, togglePop }) => {
   const { user, setUser } = useUser();
   function togglePop() {
     setSeen(!seen);
-    setDepositForm(false)
+    setDepositForm(false);
   }
   function togglePopDeposit() {
     setDepositForm(!depositForm);
-    setSeen(false)
+    setSeen(false);
   }
   const refresh = (r) => {
     setRef(ref + r);
@@ -85,8 +85,7 @@ const Usertransactionpage = ({ rows, togglePop }) => {
             />
           ) : null}
 
-          
-          <button className="depositbutton"  onClick={togglePopDeposit}>
+          <button className="depositbutton" onClick={togglePopDeposit}>
             Deposit
           </button>
           {depositForm ? (
