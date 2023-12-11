@@ -5,12 +5,8 @@ export default function BasicLineChart({xAxis,series}) {
   return (
   <div className="LineChart">
     <LineChart
-      xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-      series={[
-        {
-          data: [2, 5.5, 2, 8.5, 1.5, 5],
-        },
-      ]}
+      xAxis={xAxis}
+      series={series}
       width={1000}
       height={430}
     />

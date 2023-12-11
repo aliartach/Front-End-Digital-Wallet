@@ -13,11 +13,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 .grid-container {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
+  /* justify-content: center;
+  flex-wrap: wrap; */
+  /* margin-top: 2rem; */
+  margin-left: 10rem;
 }
 .grid-row {
   display: flex;
@@ -30,16 +34,15 @@
   cursor: pointer;
 }
 .tableuserinfo {
-  width: 850px;
-  height: 325px;
-  background-color: #333333;
+  width: 80%;
   border-collapse: collapse;
-  color: #aa9a49;
-  margin: 20px;
-  padding: 20px;
-  /* border: solid red 2px; */
-  border-radius: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  margin-left: 9rem;
 }
+
 
 .tduserinfo {
   padding: 10px;
@@ -53,6 +56,79 @@ td {
 
 
 
+
+
+.TabelMain {
+  margin: 20px;
+}
+.MerchantTabel {
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  margin-left: 9rem;
+}
+.MerchantTabel:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.tr {
+  transition: background-color 0.3s ease-in-out;
+}
+.tr:hover {
+  background-color: #eaf5ff;
+}
+td {
+  padding: 15px;
+  border-bottom: 1px solid #d9d9d9;
+  position: relative;
+}
+.F-NAME,
+.M-Email {
+  font-weight: bold;
+  color: #aa9a49;
+  border: 1px solid #aa9a49;
+}
+.L-NAME,
+.PHONE-N {
+  font-weight: bold;
+  color: #333333;
+  border: 1px solid #333333;
+}
+
+/* Alternating row colors */
+.tr:nth-child(even) {
+  background-color: #aa9a49;
+}
+
+.tr:nth-child(odd) {
+  background-color: #333333;
+}
+
+/* Gradient for table cells */
+td:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Highlight the cell content on hover */
+td:hover:before {
+  opacity: 0.8;
+}
+
+.UserTabel {
+  margin-left: 46rem;
+  margin-top: 5rem;
+  text-transform: uppercase;
+  color: #aa9a49;
+}
 
 
 

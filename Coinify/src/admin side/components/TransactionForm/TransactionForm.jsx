@@ -49,21 +49,44 @@ const TransactionForm = ({ rows }) => {
 
   const columns = [
     {
+      name: "id",
+      label: "Id",
+      options: {
+        filter: false,
+        sort: true,
+      },
+    },
+    {
       name: "date",
       label: "Date",
       options: {
         filter: true,
         sort: true,
+        customBodyRender: (value, tableMeta) => {
+          const rowData = data[tableMeta.rowIndex];
+          const dt = new Date(value).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          });
+          return dt ? dt : "N/A";
+        },
       },
     },
     {
-      name: "id",
-      label: "Transaction Id",
+      name: "date",
+      label: "Time",
       options: {
-        filter: true,
+        filter: false,
         sort: true,
+        customBodyRender: (value, tableMeta) => {
+          const rowData = data[tableMeta.rowIndex];
+          const dt = value.slice(11,19)
+          return dt ? dt : "N/A";
+        },
       },
     },
+
     {
       name: "senderId",
       label: "Sender Email",
@@ -96,7 +119,7 @@ const TransactionForm = ({ rows }) => {
       name: "amount",
       label: "Amount",
       options: {
-        filter: true,
+        filter: false,
         sort: true,
         customBodyRender: (value, tableMeta) => {
           const rowData = data[tableMeta.rowIndex];

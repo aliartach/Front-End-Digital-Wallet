@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./adminPromotionsPage.css";
 import AdminSideNavbar from "../../components/AdminSideNavbar/adminSideNavbar";
 import UserHeader from "../../../client side/components/home/userheader/userHeader";
-import PromotionsForm from "../../components/PromotionsForm/promotionsForm";
 import axios from "axios";
 import PromotionTabel from "../../components/PromotionTabel/PromotionTabel";
 import PromotionForm from "../../../client side/components/AddPromotion-Form/Promotion-Form";
 import { useUser } from "../../../Context/useUser";
+import { MdHome } from "react-icons/md";
+import { BiSolidDiscount } from "react-icons/bi";
 
 const AdminPromotionsPage = () => {
   const [promotions, setPromotions] = useState([]);
@@ -49,9 +50,7 @@ const AdminPromotionsPage = () => {
           {seen ? (
             <PromotionForm toggle={togglePopup} userId={user?.id} newPromotions={newPromotion} />
           ) : null}
-        </div>        <UserHeader name={"admin"} title={"PROMOTIONS"} />
-        {/* <h1>This is the PROMOTIONS admin Page</h1> */}
-        {/* <PromotionsForm rows={promotions}/> */}
+        </div>        <UserHeader logo={BiSolidDiscount} name={"admin"} title={"PROMOTIONS"} />
 
         {promotions.length>0 && <PromotionTabel rows={promotions}/> }
       </div>

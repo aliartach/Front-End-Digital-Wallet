@@ -10,7 +10,7 @@
 
 .MercahntCards {
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
   margin-top: 2rem;
   margin-left: 10rem;
 }

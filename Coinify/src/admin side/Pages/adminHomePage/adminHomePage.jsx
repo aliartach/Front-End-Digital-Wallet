@@ -9,6 +9,7 @@ import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
 import { useUser } from "../../../Context/useUser.jsx";
 import UserHeader from "../../../client side/components/home/userheader/userHeader.jsx";
+import { MdHome } from 'react-icons/md'; 
 
 import axios from "axios";
 const AdminHomePage = () => {
@@ -56,11 +57,30 @@ const AdminHomePage = () => {
   const merchantsCount = users.filter((user) => user.role === "merchant")
     .length;
 
+  const last7Days = [];
+  for (let i = 0; i < 7; i++) {
+    const date = new Date();
+    date.setDate(date.getDate() - i);
+    last7Days.push(date.toISOString().slice(0, 10));
+  }
+  const transactionCountByDay = {};
+  for (const date of last7Days) {
+    transactionCountByDay[date] = 0;
+  }
+  for (const transaction of transactions) {
+    const transactionDate = transaction.date.slice(0, 10);
+    if (transactionCountByDay.hasOwnProperty(transactionDate)) {
+      transactionCountByDay[transactionDate]++;
+    }
+  }
+  const xAxis = [{ scaleType: "point", data: last7Days.reverse() }];
+  const series = [{ data: Object.values(transactionCountByDay).reverse() }];
+
   return (
-    <div className="adminHomePage">
-      <AdminSideNavbar />
+  <div className="adminHomePage">
+   <AdminSideNavbar />
       <div className="adminHomePageContent">
-        <UserHeader name={"admin"} title={"HOME"} />
+        <UserHeader logo={MdHome}  name={"admin"} title={"HOME"} />
         <div className="adminHomeCards">
           <div className="grid-item">
             <HomeCard type={"USERS"} amount={usersCount}>
@@ -85,8 +105,8 @@ const AdminHomePage = () => {
           </div>
         </div>
         <div className="graph">
-          <h1 className="MiddleHeader">Transations all Time movement</h1>
-          <Line />
+          <h1 className="MiddleHeader">Transactions for the last 7 days</h1>
+          <Line xAxis={xAxis} series={series} />
         </div>
       </div>
     </div>

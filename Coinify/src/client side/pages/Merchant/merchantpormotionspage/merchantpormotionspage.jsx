@@ -5,7 +5,6 @@ import MercahntHeader from "../../../components/home/userheader/userHeader.jsx";
 import axios from "axios";
 import { useUser } from "../../../../Context/useUser.jsx";
 import AddPromotionsForm from "../../../components/AddPromotion-Form/Promotion-Form.jsx";
-// import PromotionTabel from "../../../components/PromotionTabel/PromotionTabel.jsx";
 import PromotionTabel from "../../../../admin side/components/PromotionTabel/PromotionTabel.jsx";
 import { BiSolidDiscount } from "react-icons/bi";
 const MerchantPromotionsPage = ({ togglePopup, rows }) => {

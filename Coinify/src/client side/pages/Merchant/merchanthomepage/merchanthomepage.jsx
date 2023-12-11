@@ -50,7 +50,7 @@ const Merchanthomepage = () => {
             <BiSend className="walletlogo" />
           </MercahntHomeCards>
         </div>
-        <h1 className="UserTabel">{data.firstName} Tabel</h1>
+        <h1 className="UserTabel">{data.firstName} 's Profile</h1>
         <div className="TabelMain">
           <table className="MerchantTabel">
             <tr className="tr">

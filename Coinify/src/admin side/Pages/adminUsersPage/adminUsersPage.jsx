@@ -8,6 +8,7 @@ import { useUser } from "../../../Context/useUser.jsx";
 import StickyHeadTableUSers from "../../components/SecoundFormUsers/SecoundForm.jsx";
 // import React from "react"
 import UserForm from "../../components/UserForm/usersForm.jsx";
+import { FaUsers } from "react-icons/fa";
 
 const AdminUsersPage = () => {
   const [users, setUsers] = useState([]);
@@ -35,18 +36,13 @@ const AdminUsersPage = () => {
 
       <div className="AdminUsersPageContent">
         {" "}
-        <UserHeader name={"Admin"} title={"USERS"} />
-        <div className="logobuttonspacing">
-          
-          </div>
-        
+        <UserHeader logo={FaUsers}  name={"Admin"} title={"USERS"} />
         <div>
           {" "}
-          {/* <h1>Email: {user?.email} </h1> */}
         </div>
-        {/* <UsersForm rows={users} /> */}
-        {/* <StickyHeadTableUSers rows={users} /> */}
-        {users.length > 0 && <UserForm rows={users} />}
+        <div className="useradminForm">
+        {users.length > 0 && <UserForm  rows={users} />}
+        </div>
       </div>
     </div>
   );
