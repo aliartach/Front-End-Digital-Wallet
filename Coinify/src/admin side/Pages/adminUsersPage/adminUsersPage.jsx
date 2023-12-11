@@ -35,14 +35,13 @@ const AdminUsersPage = () => {
 
       <div className="AdminUsersPageContent">
         {" "}
-        <UserHeader name={"Admin"} title={"USERS"} />
+        <UserHeader  name={"Admin"} title={"USERS"} />
         <div>
           {" "}
-          <h1>Email: {user?.email} </h1>
         </div>
-        {/* <UsersForm rows={users} /> */}
-        {/* <StickyHeadTableUSers rows={users} /> */}
-        {users.length > 0 && <UserForm rows={users} />}
+        <div className="useradminForm">
+        {users.length > 0 && <UserForm  rows={users} />}
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./adminPromotionsPage.css";
 import AdminSideNavbar from "../../components/AdminSideNavbar/adminSideNavbar";
 import UserHeader from "../../../client side/components/home/userheader/userHeader";
-import PromotionsForm from "../../components/PromotionsForm/promotionsForm";
 import axios from "axios";
 import PromotionTabel from "../../components/PromotionTabel/PromotionTabel";
 import PromotionForm from "../../../client side/components/AddPromotion-Form/Promotion-Form";
@@ -49,8 +48,6 @@ const AdminPromotionsPage = () => {
             <PromotionForm toggle={togglePopup} userId={user?.id} newPromotions={newPromotion} />
           ) : null}
         </div>        <UserHeader name={"admin"} title={"PROMOTIONS"} />
-        <h1>This is the PROMOTIONS admin Page</h1>
-        {/* <PromotionsForm rows={promotions}/> */}
 
         {promotions.length>0 && <PromotionTabel rows={promotions}/> }
       </div>

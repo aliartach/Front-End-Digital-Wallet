@@ -30,7 +30,7 @@ const AppRoutes = () => {
       </Route>
       <Route path="/adminHomepage/" element={<AdminHomePage />} />
       <Route path="/UserTranstionPage/" element={<Usertransactionpage />} />
-      <Route path="/usertransactionpage/" element={<Userpromotionpage/>}/>
+      <Route path="/Userpromotionpage/" element={<Userpromotionpage/>}/>
 
 
 

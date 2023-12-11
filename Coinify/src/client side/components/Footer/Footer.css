@@ -78,13 +78,13 @@
 }
 .container .contactForm h2 {
   font-size: 1.7em;
-  color: #aa9a49;
+  color: #fcfaf9;
   align-items: center;
   display: flex;
   justify-content: center;
   width: 100%;
   border-radius: 33px;
-  background-color: #333333;
+  background-color: #aa9a49;
   font-weight: 500;
 }
 

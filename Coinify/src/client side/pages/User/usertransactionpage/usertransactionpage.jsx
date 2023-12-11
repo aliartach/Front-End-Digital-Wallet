@@ -82,7 +82,6 @@ const Usertransactionpage = ({ rows, togglePop }) => {
               toggle={togglePop}
               userData={data}
               refreshPage={refresh}
-              money="usdDeposit"
             />
           ) : null}
 

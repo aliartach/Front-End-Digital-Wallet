@@ -57,10 +57,10 @@ const AdminHomePage = () => {
     .length;
 
   return (
-    <div className="adminHomePage">
-      <AdminSideNavbar />
+  <div className="adminHomePage">
+   <AdminSideNavbar />
       <div className="adminHomePageContent">
-        <UserHeader name={"admin"} title={"HOME"} />
+        <UserHeader  name={"admin"} title={"HOME"} />
         <div className="adminHomeCards">
           <div className="grid-item">
             <HomeCard type={"USERS"} amount={usersCount}>

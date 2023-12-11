@@ -11,9 +11,9 @@ const Footer = () => {
             <div className="box">
               <div className="text">
                 <h3>Phone</h3>
-                <p>000-000-0000</p>
+                <p>78839841</p>
                 <h3>Email</h3>
-                <p>wrub7d78i0e@temporary-mail</p>
+                <p>Coinify@gmail.com</p>
                 <h3>Address</h3>
                 <p>
                   402671 Sugar Camp Road,
