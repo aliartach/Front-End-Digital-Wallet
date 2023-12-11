@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import Homeimage from "../../../assets/homepage1.png";
+import Homeimage from "../../../assets/HOMEIMG.png";
 import "../Home/HomePage.css";
 import { Link } from "react-router-dom";
 const HomePage = () => {

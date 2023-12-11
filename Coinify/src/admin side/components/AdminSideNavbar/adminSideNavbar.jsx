@@ -77,7 +77,7 @@ const AdminSideNavbar = () => {
       {isOpen ? (
         <>
           <img className="logosidenavbar" src={logo} alt="Logo" />
-          <div className="interdiv">
+          <div className="interdivadmin">
             <ul className="ulsidenavbar">
               <Link to="/adminHomepage">
                 <div className="flexflex">

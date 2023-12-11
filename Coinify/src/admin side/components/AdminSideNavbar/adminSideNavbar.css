@@ -23,11 +23,12 @@
 .adminSideNavbar a {
   text-decoration: none;
 }
-.interdiv {
+.interdivadmin {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 50px;
+  width: 300px;
 }
 .ulsidenavbar li {
   font-size: 1.5rem;
