@@ -37,10 +37,7 @@ const AdminUsersPage = () => {
         {" "}
         <UserHeader name={"Admin"} title={"USERS"} />
         <div className="logobuttonspacing">
-          <button className="adduseradminpage1" 
-                  onClick={() => { setEditedUserData({ verified: false, role: "user" }); }} >
-                  Add User
-          </button>
+          
           </div>
         
         <div>

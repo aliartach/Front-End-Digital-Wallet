@@ -8,6 +8,7 @@ import { MdCallReceived } from "react-icons/md";
 import axios from "axios";
 import './userHomePage.css'
 import { useUser } from "../../../../Context/useUser";
+import { MdHome } from 'react-icons/md'; 
 
 const userHomePage = () => {
   const [data, setData] = useState([]);
@@ -37,6 +38,7 @@ const userHomePage = () => {
         <Userheader
           name={data.firstName + " " + data.lastName}
           title={"HOME"}
+          logo={MdHome}
         />
         <div>
           <div className="grid-container">

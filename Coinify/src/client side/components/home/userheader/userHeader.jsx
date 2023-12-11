@@ -1,7 +1,7 @@
 import { IoIosNotifications } from "react-icons/io";
 import { MdHome} from "react-icons/md";
 import "../userheader/userHeader.css";
-const UserHeader = ({ name, title }) => {
+const UserHeader = ({ name, title, logo: LogoComponent }) => {
 
   return (
     <div className="homepage1">
@@ -14,7 +14,7 @@ const UserHeader = ({ name, title }) => {
         <IoIosNotifications className="notificationlogo" />
       </header>
       <div className="homepagedescription">
-        <MdHome className="homelogopage" /> <p>{title}</p>
+      {LogoComponent && <LogoComponent className="homelogopage" />} <p>{title}</p>
         
       </div>
     </div>

@@ -1,4 +1,4 @@
-import "./transfermoneyform.css";
+import "./depositForm.css";
 import { GrTransaction } from "react-icons/gr";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
@@ -9,39 +9,40 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const transfermoneyform = ({ toggle, userData ,refreshPage}) => {
-  const [email, setEmail] = useState("");
+const DepositMoneyform = ({ toggle, userData, refreshPage,money }) => {
+  const [type, settype] = useState(money);
   const [amount, setAmount] = useState(0);
 
   const handleCreateTransaction = async (e) => {
     e.preventDefault();
 
-    if (amount <= 0 || amount > userData.balanceUSDT) {
-      toast.error(`Insufficient Funds`, {
-        position: "top-center",
-        autoClose: 1000,
-        closeOnClick: true,
-        theme: "dark",
-      });
+    if(amount<= 0) {
+      toast.error(`Not Valid Amount`,
+        {
+          position: "top-center",
+          autoClose: 1000,
+          closeOnClick: true,
+          theme: "dark",
+        })  
       return;
     }
+
     try {
       const response = await axios.post(
         `http://localhost:4000/api/transactions`,
         {
-          receiverEmail: email,
-          amount,
-          moneyType: "usdt",
-          senderId: userData.id,
+          receiverEmail: userData.email,
+          amount: amount,
+          moneyType: type,
+          senderId: 6,
         }
       );
-      console.log("RES", response);
 
       if (response.status === 200) {
-        setEmail("");
         setAmount(0);
         refreshPage("ref");
-        toast.success(`Money Sent successfully.`, {
+        toggle()
+        toast.success(`Money Deposited by ADMIN.`, {
           position: "top-center",
           autoClose: 1000,
           closeOnClick: true,
@@ -49,8 +50,6 @@ const transfermoneyform = ({ toggle, userData ,refreshPage}) => {
         });
       }
     } catch (error) {
-      console.log("RES", error);
-
       toast.error(`Error, ${error.response?.data?.error}`, {
         position: "top-center",
         autoClose: 1000,
@@ -60,47 +59,36 @@ const transfermoneyform = ({ toggle, userData ,refreshPage}) => {
     }
   };
 
+
   return (
     <div>
-      <form className="transfermoneyform" onSubmit={handleCreateTransaction}>
-        <div className="transfermoneyheader">
+      <form className="depositmoneyform" onSubmit={handleCreateTransaction}>
+        <div className="depositmoneyheader">
           <IoArrowBackCircle
             className="backbutton"
             onClick={() => {
               toggle();
             }}
           />
-          <h3 className="h3transfermoney">Transfer money</h3>
+          <h3 className="h3depositmoney">Deposit Money</h3>
           <GrTransaction className="transactionlogo1" />
         </div>
-        <div className="hrtransfermoneyform"></div>
-        <div className="transfermoneyheader email">
-          <label className="recieveremail">Reciever Email Address</label>
-          <MdOutlineEmail className="inputemailicon" />
-          <input
-            placeholder="Email-Address"
-            className="inputmoneytransfer"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-        </div>
         <br></br>
         <br></br>
-        <div className="transfermoneyheader amount">
+        <div className="depositmoneyheader amount">
           <label className="recieveramount">Amount</label>
           <RiMoneyDollarCircleFill className="inputmoneyicon" />
           <input
             placeholder="Amount"
             value={amount}
-            className="inputmoneytransfer"
+            className="inputmoneydeposit"
             type="number"
             onChange={(e) => setAmount(e.target.value)}
           ></input>
         </div>
-        <div className="transfermmoneybuttondiv">
-          <button className="transfermoneybutton" type="submit">
-            TRANSFER
+        <div className="depositmmoneybuttondiv">
+          <button className="depositmoneybutton" type="submit">
+            Deposit
           </button>
         </div>
       </form>
@@ -108,4 +96,4 @@ const transfermoneyform = ({ toggle, userData ,refreshPage}) => {
   );
 };
 
-export default transfermoneyform;
+export default DepositMoneyform;

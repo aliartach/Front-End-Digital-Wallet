@@ -67,7 +67,7 @@ const UserForm = ({ rows }) => {
         newUser
       );
 
-      const newData = [...data, newUser];
+      const newData = [newUser, ...data];
       setData(newData);
 
       setEditedUserData(null);
@@ -80,7 +80,12 @@ const UserForm = ({ rows }) => {
         theme: "dark",
       });
     } catch (error) {
-      console.error("Error:", error);
+      toast.error(`Error, ${error}`, {
+        position: "top-center",
+        autoClose: 1000,
+        closeOnClick: true,
+        theme: "dark",
+      });
     }
   };
 
@@ -187,7 +192,7 @@ const UserForm = ({ rows }) => {
 
   const options = {
     filterType: "checkbox",
-    // selectableRowsHideCheckboxes: true
+    selectableRowsHideCheckboxes: true
   };
 
   const handleEditUser = async (e) => {
@@ -246,14 +251,16 @@ const UserForm = ({ rows }) => {
 
   return (
     <div className="UserForm">
-      <button
-      className="adduseradminpage"
-        onClick={() => {
-          setEditedUserData({ verified: false, role: "user" });
-        }}
-      >
-        Add User
-      </button>
+      <div className="adminUserformButton">
+        <button
+          className="addbutton"
+          onClick={() => {
+            setEditedUserData({ verified: false, role: "user" });
+          }}
+        >
+          Add User
+        </button>
+      </div>
 
       <div className="Formtable">
         <MUIDataTable

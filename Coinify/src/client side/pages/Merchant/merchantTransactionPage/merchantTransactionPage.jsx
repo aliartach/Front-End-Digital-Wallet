@@ -5,6 +5,7 @@ import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx";
 import axios from "axios";
 import "../merchantTransactionPage/merchantTransactionPage.css";
 import { useUser } from "../../../../Context/useUser.jsx";
+import { GrTransaction } from "react-icons/gr";
 
 const MerchantTransactionPage = ({ rows }) => {
   const { user, setUser } = useUser();
@@ -50,6 +51,7 @@ const MerchantTransactionPage = ({ rows }) => {
         <MercahntHeader
           name={data.firstName + " " + data.lastName}
           title="Transaction"
+          logo={GrTransaction}
         />
         {transactions.length > 0 && <StickyHeadTable rows={transactions} />}
       </div>

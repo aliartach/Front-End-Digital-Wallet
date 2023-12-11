@@ -7,6 +7,7 @@ import axios from "axios";
 import PromotionTabel from "../../components/PromotionTabel/PromotionTabel";
 import PromotionForm from "../../../client side/components/AddPromotion-Form/Promotion-Form";
 import { useUser } from "../../../Context/useUser";
+
 const AdminPromotionsPage = () => {
   const [promotions, setPromotions] = useState([]);
   const [seen, setSeen] = useState(false);

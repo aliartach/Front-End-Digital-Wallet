@@ -5,7 +5,7 @@ import Sidenavbar from "../../../../admin side/components/SideNavBar/SideNavbar"
 import Userheader from "../../../components/home/userheader/userHeader"
 import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx"
 import { useUser } from "../../../../Context/useUser.jsx";
-
+import { BiSolidDiscount } from "react-icons/bi";
 
 
 const userpromotionpage = (rows) => {
@@ -52,7 +52,7 @@ useEffect( () => {
     <div className="userpromotionpage">
       <Sidenavbar />
        <div className="userrightside2">
-         <Userheader title={"PROMOTIONS"} name={data.firstName + " " + data.lastName} />
+         <Userheader title={"PROMOTIONS"} name={data.firstName + " " + data.lastName} logo={BiSolidDiscount} />
           <div className="userpromotiontable">
           {promotions ? promotions.length>0 : <p>no promo</p>  &&  <StickyHeadTable rows={promotions} />}
            
