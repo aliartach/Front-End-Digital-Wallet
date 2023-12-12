@@ -27,7 +27,8 @@
 
 
 .TabelMain {
-  margin: 20px;
+  /* margin: 20px; */
+  border: solid red 2px;
 }
 .MerchantTabel {
   width: 80%;
