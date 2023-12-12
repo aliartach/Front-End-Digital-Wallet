@@ -1,4 +1,6 @@
-
+.hellousername {
+ margin-left: 10rem;
+}
 
 .notificationlogo {
     height: 35px;
@@ -48,6 +50,10 @@
     border: 3px solid #aa9a49 ;
     padding: 10px;
     background-color: white;
+}
+.MainHeader {
+ width: 100%;
+ margin-left: 5rem;
 }
 
 .none{display: noe;}

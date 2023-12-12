@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./userpromotionpage.css";
-import axios from "axios";
 import Sidenavbar from "../../../../admin side/components/SideNavBar/SideNavbar";
 import Userheader from "../../../components/home/userheader/userHeader";
-
+import MerchantTable from "../../../components/MerchantTabel/MerchantTabel";
 const userpromotionpage = () => {
   return (
-    <div className="userpromotionpage">
+    <div className="UserMerchantPage">
       <Sidenavbar />
+      <div className="userpromotionpage"></div>
       <div className="userrightside">
         <Userheader />
-        <div className="userpromotion"></div>
+        <MerchantTable />
       </div>
     </div>
   );

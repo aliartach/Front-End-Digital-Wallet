@@ -69,7 +69,7 @@ const UserHeader = ({ name, title }) => {
         {text.senderName} have sent you ${text.amount}{" "}
       </Snackbar>
       {socket && (
-        <div>
+        <div className="MainHeader">
           <header className="headerhomepage">
             <>
               <br></br>

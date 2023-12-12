@@ -75,7 +75,7 @@ const MerchantTransactionPage = ({ rows }) => {
         />
 
 <div className="transferanddeposit">
-          {/* <div>
+          <div>
             <button
               onClick={togglePop}
               className="transferbutton"
@@ -83,7 +83,7 @@ const MerchantTransactionPage = ({ rows }) => {
             >
               Transfer
             </button>
-          </div> */}
+          </div>
           {seen ? (
             <Transfermoneyform
               toggle={togglePop}
