@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../MerchantSideNavbar/MerchantSideNavbar.css";
 import logo from "../../../../assets/LOGO1.png";
 import { GrTransaction } from "react-icons/gr";
@@ -12,7 +12,8 @@ import { useUser } from "../../../Context/useUser";
 const MerchantSideNavbar = () => {
   const { user, socket } = useUser();
   const [isOpen, setIsOpen] = useState(false);
-
+// useEffect(() => {
+// },[user, socket])
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -54,6 +55,8 @@ const MerchantSideNavbar = () => {
             to="/"
             onClick={() => {
               localStorage.clear();
+              socket?.emit("delUser");
+
             }}
           >
             <div className="flexflex">
@@ -109,6 +112,8 @@ const MerchantSideNavbar = () => {
                 to="/"
                 onClick={() => {
                   localStorage.clear();
+                  socket?.emit("delUser");
+
                 }}
               >
                 <div className="flexflex">

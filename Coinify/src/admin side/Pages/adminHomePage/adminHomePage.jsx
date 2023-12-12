@@ -52,7 +52,7 @@ const AdminHomePage = () => {
     fetchPromotions();
     fetchUsers();
     fetchTransactions();
-  }, []);
+  }, [user]);
   const usersCount = users.filter((user) => user.role === "user").length;
   const merchantsCount = users.filter((user) => user.role === "merchant")
     .length;

@@ -35,7 +35,7 @@ const AdminPromotionsPage = () => {
     };
 
     fetchPromotions();
-  }, [ref]);
+  }, [user,ref]);
   return (
     <div className="AdminPromotionsPage">
       <AdminSideNavbar />

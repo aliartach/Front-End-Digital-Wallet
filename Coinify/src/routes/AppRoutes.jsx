@@ -22,40 +22,41 @@ const AppRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/Registerpage" element={<Registerpage />} />
 
-      <Route element={<ProtectedRoute allowedRoles={["user"]} />}>
+      {/* <Route element={<ProtectedRoute allowedRoles={["user"]} />}>
         <Route path="/userhomepage/" element={<UserHomePage />} />
-        <Route path="/UserTranstionPage/" element={<Usertransactionpage />} />
-        <Route path="/Userpromotionpage/" element={<Userpromotionpage/>}/>
-     </Route>
-      
-      
-      
-     
+      </Route> */}
+      <Route path="/userhomepage/" element={<UserHomePage />} />
+      {/* <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
+        <Route path="/adminHomepage/" element={<AdminHomePage />} />
+      </Route> */}
+      <Route path="/adminHomepage/" element={<AdminHomePage />} />
+      <Route path="/UserTranstionPage/" element={<Usertransactionpage />} />
+      <Route path="/UserPromotionPage/" element={<Userpromotionpage/>}/>
+
 
 
       <Route element={<ProtectedRoute allowedRoles={["merchant", "user"]} />}>
          <Route path="/UserTranstionPage/" element={<Usertransactionpage/>} />
       </Route>
 
-      
-     
-      <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
-        <Route path="/adminHomepage/" element={<AdminHomePage />} />
-        <Route path="/adminUserspage" element={<AdminUsersPage />} />
-        <Route path="/adminPromotionspage" element={<AdminPromotionsPage />} />
-        <Route path="/adminTransactionspage" element={<AdminTransactionsPage />} />
-      </Route>
-
-
-      <Route element={<ProtectedRoute allowedRoles={["merchant"]} />}>
+      <Route path="/adminUserspage" element={<AdminUsersPage />} />
+      <Route path="/adminPromotionspage" element={<AdminPromotionsPage />} />
+      <Route
+        path="/adminTransactionspage"
+        element={<AdminTransactionsPage />}
+      />
+      <Route path="/merchanthomepage/" element={<Merchanthomepage />} />
+      {/* <Route element={<ProtectedRoute allowedRoles={["merchant"]} />}>
         <Route path="/merchanthomepage/" element={<Merchanthomepage />} />
-        <Route path="/merchantTransactionPage/" element={<MerchantTransactionPage />} />
-        <Route path="/merchantPromotionPage/" element={<MerchantPromotionPage />} />
-      </Route>
-
-
-
-      
+      </Route> */}
+      <Route
+        path="/merchantTransactionPage/"
+        element={<MerchantTransactionPage />}
+      />
+      <Route
+        path="/merchantPromotionPage/"
+        element={<MerchantPromotionPage />}
+      />
       <Route path="/*" element={<NotFoundPage />} />
     </Routes>
   );
