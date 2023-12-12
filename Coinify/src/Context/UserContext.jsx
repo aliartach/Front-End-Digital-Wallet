@@ -1,12 +1,13 @@
 import React, { createContext, useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { io } from "socket.io-client";
+import axios from "axios";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const token = localStorage.getItem("token");
+  const [token,setToken] = useState(localStorage.getItem("token"))
   const [socket, setSocket] = useState(null);
 
   const decodeToken = (token) => {
@@ -25,6 +26,9 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const decodedUser = decodeToken(token);
     setUser(decodedUser);
+    if (decodedUser) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    }
   }, [token]);
 
   useEffect(() => {

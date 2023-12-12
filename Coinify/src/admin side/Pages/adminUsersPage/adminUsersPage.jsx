@@ -26,7 +26,7 @@ const AdminUsersPage = () => {
     };
 
     fetchUsers();
-  }, []);
+  }, [user]);
   console.log("allUsers", users);
 
   return (
