@@ -45,7 +45,7 @@ const Merchanthomepage = () => {
           <MercahntHomeCards type={"RECEIVED"} amount={data.balanceUSDT}>
             <MdCallReceived className="walletlogo" />
           </MercahntHomeCards>
-          <MercahntHomeCards type={"SENT"} amount={data.balanceUSD}>
+          <MercahntHomeCards type={"SENT"} amount={data.balanceUSD }>
             <BiSend className="walletlogo" />
           </MercahntHomeCards>
         </div>
