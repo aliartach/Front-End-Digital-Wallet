@@ -42,3 +42,13 @@
     font-weight: bold;
 }
 
+.allthenotifications{
+    position: absolute;
+    top:105px;
+    right: 27.2%;
+    border: 3px solid #aa9a49 ;
+    padding: 10px;
+    background-color: white;
+}
+
+.none{display: noe;}

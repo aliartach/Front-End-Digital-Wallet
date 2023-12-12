@@ -9,8 +9,19 @@ import { useUser } from "../../../Context/useUser";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-// Separate component for closed state content
+
+
+const SideNavbar = () => {
+  const { socket, user } = useUser();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Separate component for closed state content
 const ClosedSidebar = () => (
+
   <div className="closed-sidenavbar">
     <div className="interdivClosed">
       <ul className="ulsidenavbar">
@@ -46,6 +57,7 @@ const ClosedSidebar = () => (
           to="/"
           onClick={() => {
             localStorage.clear();
+            socket?.emit("delUser");
           }}
         >
           <div className="flexflex">
@@ -59,12 +71,6 @@ const ClosedSidebar = () => (
   </div>
 );
 
-const SideNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <div className={`adminsidenavbar ${isOpen ? "open" : ""}`}>
@@ -108,6 +114,7 @@ const SideNavbar = () => {
                 to="/"
                 onClick={() => {
                   localStorage.clear();
+                  socket?.emit("delUser");
                 }}
               >
                 <div className="flexflex">

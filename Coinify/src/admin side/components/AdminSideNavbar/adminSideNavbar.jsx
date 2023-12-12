@@ -8,67 +8,72 @@ import { MdHome } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { RiUserSettingsFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-
-const ClosedSidebar = () => (
-  <div className="closed-sidenavbar">
-    <div className="interdivClosed">
-      <ul className="ulsidenavbar">
-        <Link to="/adminHomepage">
-          <div className="flexflex">
-            <li>
-              {" "}
-              <MdHome className="homelogo" />
-            </li>
-          </div>
-        </Link>
-        <div className="gold-line-closed"></div>
-        <Link to="/adminUserspage">
-          <div className="flexflex">
-            <li>
-              <RiUserSettingsFill className="userslogo" />
-            </li>
-          </div>
-        </Link>
-        <div className="gold-line-closed"></div>
-        <Link to="/adminTransactionspage">
-          <div className="flexflex">
-            <li>
-              <GrTransaction className="transactionlogo" />
-            </li>
-          </div>
-        </Link>
-        <div className="gold-line-closed"></div>
-        <Link to="/adminPromotionspage">
-          <div className="flexflex">
-            <li>
-              <BiSolidDiscount className="promotionlogo" />
-            </li>
-          </div>
-        </Link>
-        <div className="gold-line-closed"></div>
-        <Link
-          to="/"
-          onClick={() => {
-            localStorage.clear();
-          }}
-        >
-          <div className="flexflex">
-            <li>
-              <SlLogout className="logoutlogo" />
-            </li>
-          </div>
-        </Link>
-      </ul>
-    </div>
-  </div>
-);
+import { useUser } from "../../../Context/useUser";
 
 const AdminSideNavbar = () => {
+  const { socket, user } = useUser();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  //closedSideNavbar
+  const ClosedSidebar = () => (
+    <div className="closed-sidenavbar">
+      <div className="interdivClosed">
+        <ul className="ulsidenavbar">
+          <Link to="/adminHomepage">
+            <div className="flexflex">
+              <li>
+                {" "}
+                <MdHome className="homelogo" />
+              </li>
+            </div>
+          </Link>
+          <div className="gold-line-closed"></div>
+          <Link to="/adminUserspage">
+            <div className="flexflex">
+              <li>
+                <RiUserSettingsFill className="userslogo" />
+              </li>
+            </div>
+          </Link>
+          <div className="gold-line-closed"></div>
+          <Link to="/adminTransactionspage">
+            <div className="flexflex">
+              <li>
+                <GrTransaction className="transactionlogo" />
+              </li>
+            </div>
+          </Link>
+          <div className="gold-line-closed"></div>
+          <Link to="/adminPromotionspage">
+            <div className="flexflex">
+              <li>
+                <BiSolidDiscount className="promotionlogo" />
+              </li>
+            </div>
+          </Link>
+          <div className="gold-line-closed"></div>
+          <Link
+            to="/"
+            onClick={() => {
+              localStorage.clear();
+              socket?.emit("delUser");
+            }}
+          >
+            <div className="flexflex">
+              <li>
+                <SlLogout className="logoutlogo" />
+              </li>
+            </div>
+          </Link>
+        </ul>
+      </div>
+    </div>
+  );
+
   return (
     <div className={`adminsidenavbar ${isOpen ? "open" : ""}`}>
       <div className="navbar-toggle" onClick={toggleNavbar}>
@@ -77,7 +82,7 @@ const AdminSideNavbar = () => {
       {isOpen ? (
         <>
           <img className="logosidenavbar" src={logo} alt="Logo" />
-          <div className="interdiv">
+          <div className="interdivadmin">
             <ul className="ulsidenavbar">
               <Link to="/adminHomepage">
                 <div className="flexflex">
@@ -116,6 +121,7 @@ const AdminSideNavbar = () => {
                 to="/"
                 onClick={() => {
                   localStorage.clear();
+                  socket?.emit("delUser");
                 }}
               >
                 <div className="flexflex">

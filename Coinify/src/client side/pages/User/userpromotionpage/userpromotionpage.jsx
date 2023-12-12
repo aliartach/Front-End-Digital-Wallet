@@ -58,7 +58,7 @@ useEffect( () => {
           {promotions ? promotions.length>0 : <p>no promo</p>  &&  <StickyHeadTable rows={promotions} />}
            
           </div>
-          <Buyusdtform />
+          {/* <Buyusdtform /> */}
        </div>
         
         

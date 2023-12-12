@@ -70,7 +70,7 @@ const DepositMoneyform = ({ toggle, userData, refreshPage,money }) => {
               toggle();
             }}
           />
-          <h3 className="h3depositmoney">Deposit Money</h3>
+          <h3 className="h3depositmoney">Deposit Money ${type.toUpperCase()==="USDT"?"USDT":"USD"}</h3>
           <GrTransaction className="transactionlogo1" />
         </div>
         <br></br>
