@@ -6,6 +6,7 @@ import Userheader from "../../../components/home/userheader/userHeader"
 import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx"
 import { useUser } from "../../../../Context/useUser.jsx";
 import { BiSolidDiscount } from "react-icons/bi";
+import Buyusdtform from "../../../components/buyusdtform/buyusdtform.jsx";
 
 
 const userpromotionpage = (rows) => {
@@ -57,6 +58,7 @@ useEffect( () => {
           {promotions ? promotions.length>0 : <p>no promo</p>  &&  <StickyHeadTable rows={promotions} />}
            
           </div>
+          <Buyusdtform />
        </div>
         
         
