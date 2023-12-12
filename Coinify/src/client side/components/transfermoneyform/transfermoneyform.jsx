@@ -9,9 +9,10 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const transfermoneyform = ({ toggle, userData ,refreshPage}) => {
+const transfermoneyform = ({ toggle, userData, refreshPage }) => {
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState(0);
+  let { socket, user } = useUser();
 
   const handleCreateTransaction = async (e) => {
     e.preventDefault();
@@ -35,9 +36,15 @@ const transfermoneyform = ({ toggle, userData ,refreshPage}) => {
           senderId: userData.id,
         }
       );
-      console.log("RES", response);
-
       if (response.status === 200) {
+        socket?.emit("sendNotification", {
+          senderName: userData.email,
+          receiverName: email,
+          amount: amount,
+          time: Date.now(),
+          moneyType: "usdt",
+        });
+
         setEmail("");
         setAmount(0);
         refreshPage("ref");
@@ -49,8 +56,6 @@ const transfermoneyform = ({ toggle, userData ,refreshPage}) => {
         });
       }
     } catch (error) {
-      console.log("RES", error);
-
       toast.error(`Error, ${error.response?.data?.error}`, {
         position: "top-center",
         autoClose: 1000,
