@@ -1,54 +1,71 @@
-
-
 .notificationlogo {
-    height: 35px;
-    width: 35px;
-    color: #aa9a49;
-    margin-right: 30px;
+  height: 35px;
+  width: 35px;
+  color: #aa9a49;
+  margin-right: 30px;
 }
 .homepage1 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .headerhomepage {
-    display: flex;
-    align-items: center;
-    width: 95%;
-    height: 100px;
-    justify-content: space-between;
-    color: #aa9a49;
-    border-bottom: solid black 1.5px;
-    text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 100px;
+  justify-content: space-between;
+  color: #aa9a49;
+  border-bottom: solid black 1.5px;
+  text-transform: uppercase;
 }
 .homelogopage {
-    height: 40px;
-    width: 40px;
+  height: 40px;
+  width: 40px;
 }
 .homepagedescription {
-    display: flex;
-    justify-content: flex-start;
-    align-items:center;
-    gap: 20px;
-    margin-top: 20px;
-    width: 50%;
-    margin-right: 45rem;
-    color: #aa9a49;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  width: 50%;
+  margin-right: 45rem;
+  color: #aa9a49;
 }
 .homepagedescription p {
-    font-size: 22px;
-    font-weight: bold;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.allthenotifications{
-    position: absolute;
-    top:105px;
-    right: 27.2%;
-    border: 3px solid #aa9a49 ;
-    padding: 10px;
-    background-color: white;
+.allthenotifications {
+  position: absolute;
+  top: 105px;
+  right: 27.2%;
+  border: 3px solid #aa9a49;
+  padding: 10px;
+  background-color: white;
+}
+.MainHeader {
+ width: 100%;
+ margin-left: 5rem;
 }
 
-.none{display: noe;}
+.none {
+  display: noe;
+}
+
+.notificationDivP {
+  position: relative;
+}
+.notificationlogo {
+  position: absolute;
+}
+
+.notificationNumber {
+  position: absolute;
+  top: 37px;
+  margin-left: 30px;
+}
