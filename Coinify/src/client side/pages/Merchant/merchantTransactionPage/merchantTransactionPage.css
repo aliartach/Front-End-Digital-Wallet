@@ -7,3 +7,17 @@
  width: 100%;
 }
 
+.transferbutton {
+    cursor: pointer;
+    border-style: none;
+    background-color: #333333;
+    border-radius: 33px;
+    color: #aa9a49;
+}
+.depositbutton {
+    cursor: pointer;
+    border-style: none;
+    background-color: #333333;
+    border-radius: 33px;
+    color: #aa9a49;
+}

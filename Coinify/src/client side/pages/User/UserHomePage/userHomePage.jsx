@@ -21,7 +21,7 @@ const userHomePage = () => {
         const response = await axios.get(
           `http://localhost:4000/api/users/${user?.id}`
         );
-        setData(response.data);}
+        setData(response?.data);}
       } catch (error) {
         console.error("Error:", error);
       }

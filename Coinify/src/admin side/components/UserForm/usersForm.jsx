@@ -168,15 +168,15 @@ const UserForm = ({ rows }) => {
           const userId = data[rowIndex].id;
 
           return (
-            <div>
-              <button
+            <div className="Editbutton">
+              <button className="deletebutton"
                 onClick={(e) => {
                   handleDeleteUser(e, userId);
                 }}
               >
                 Delete
               </button>
-              <button
+              <button className="editbutton"
                 onClick={(e) => {
                   setEditedUserData(data[rowIndex]);
                 }}
