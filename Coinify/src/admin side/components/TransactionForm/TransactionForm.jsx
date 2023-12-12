@@ -162,15 +162,15 @@ const TransactionForm = ({ rows }) => {
           const transactionId = data[rowIndex].id;
 
           return (
-            <div>
-              <button
-                onClick={(e) => {
+            <div className="Editbutton">
+              <button className="deletebutton"
+                onClick={(e) => { 
                   handleDeleteTransaction(e, transactionId);
                 }}
               >
                 Delete
               </button>
-              <button
+              <button className="editbutton"
                 onClick={(e) => {
                   seteditedTransactionData(data[rowIndex]);
                 }}

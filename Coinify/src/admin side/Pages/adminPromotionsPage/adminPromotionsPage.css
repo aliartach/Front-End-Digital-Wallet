@@ -8,3 +8,20 @@
   flex-direction: column;
   align-items: center;
 }
+.addbuttonadmin {
+  height: 40px;
+  width: 120px;
+  cursor: pointer;
+  border-radius: 33px;
+  position: absolute;
+  z-index: 143;
+}
+.addbuttonadmin:hover {
+  background-color: #aa9a49;
+  color: white;
+}
+
+.PromTable {
+width: 98%;
+margin-right: 7rem;
+}

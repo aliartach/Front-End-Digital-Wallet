@@ -43,7 +43,7 @@ const AdminPromotionsPage = () => {
         {" "}
         <div className="AddPromotionButton">
           <div>
-            <button onClick={togglePopup} className="addbutton" type="submit">
+            <button onClick={togglePopup} className="addbuttonadmin" type="submit">
               Add Promotion
             </button>
           </div>
@@ -51,8 +51,10 @@ const AdminPromotionsPage = () => {
             <PromotionForm toggle={togglePopup} userId={user?.id} newPromotions={newPromotion} />
           ) : null}
         </div>        <UserHeader logo={BiSolidDiscount} name={"admin"} title={"PROMOTIONS"} />
+        <div className="PromTable">
 
         {promotions.length>0 && <PromotionTabel rows={promotions}/> }
+        </div>
       </div>
     </div>
   );

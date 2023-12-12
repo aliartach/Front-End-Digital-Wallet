@@ -61,7 +61,7 @@ const MerchantPromotionsPage = ({ togglePopup, rows }) => {
       <div className="RightSide">
         <div className="AddPromotionButton">
           <div>
-            <button onClick={togglePopup} className="addbutton" type="submit">
+            <button onClick={togglePopup} className="addbuttonmechant" type="submit">
               Add Promotion
             </button>
           </div>
@@ -78,7 +78,9 @@ const MerchantPromotionsPage = ({ togglePopup, rows }) => {
           title="Promotion"
           logo={BiSolidDiscount}
         />
+        <div className="promtable">
         {promotions.length > 0 && <PromotionTabel  rows={promotions} />}
+        </div>
       </div>
     </div>
   );

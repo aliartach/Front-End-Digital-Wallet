@@ -139,15 +139,15 @@ const PromotionTabel = ({ rows }) => {
           const promotionId = data[rowIndex].id;
 
           return (
-            <div>
-              <button
+            <div className="Editbutton">
+              <button className="deletebutton"
                 onClick={(e) => {
                   handleDeletepromotion(e, promotionId);
                 }}
               >
                 Delete
               </button>
-              <button
+              <button className="editbutton"
                 onClick={(e) => {
                   seteditedpromotionData(data[rowIndex]);
                   console.log("ptbefore", editedpromotionData);

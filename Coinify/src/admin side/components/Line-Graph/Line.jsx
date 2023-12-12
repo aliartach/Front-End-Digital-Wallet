@@ -7,7 +7,7 @@ export default function BasicLineChart({xAxis,series}) {
     <LineChart
       xAxis={xAxis}
       series={series}
-      width={1000}
+      width={1500}
       height={430}
     />
     </div>

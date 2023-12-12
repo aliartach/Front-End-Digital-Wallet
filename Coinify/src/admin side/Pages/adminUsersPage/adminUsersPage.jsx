@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./adminUsersPage.css";
 import AdminSideNavbar from "../../components/AdminSideNavbar/adminSideNavbar";
 import UserHeader from "../../../client side/components/home/userheader/userHeader";
-import UsersForm from "../../components/UsersForm/usersForm";
 import axios from "axios";
 import { useUser } from "../../../Context/useUser.jsx";
-import StickyHeadTableUSers from "../../components/SecoundFormUsers/SecoundForm.jsx";
-// import React from "react"
 import UserForm from "../../components/UserForm/usersForm.jsx";
 import { FaUsers } from "react-icons/fa";
 
@@ -15,7 +12,6 @@ const AdminUsersPage = () => {
   const [merchants, setMerchants] = useState([]);
 
   const { user, setUser } = useUser();
-  console.log("heelooooo", user);
   useEffect(() => {
     const fetchUsers = async () => {
       try {

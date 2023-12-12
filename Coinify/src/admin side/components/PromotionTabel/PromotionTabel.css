@@ -58,8 +58,28 @@
   }
   
   .PromotionsForm {
-   margin-left: 2rem;
+   margin-left: 4rem;
    margin-top: 25px;
-   margin-right: 2rem;
+   margin-right: 4rem;
+   width: 100%;
+   
   }
+  .deletebutton {
+  border-radius: 33px;
+  border-style: none;
+  color: #efefef;
+  background-color: red;
+  }
+  .editbutton {
+    border-radius: 33px;
+    border-style: none;
+    color: #efefef;
+    background-color: green;
+    }
+  .Editbutton {
+  display: flex;
+  gap: 0.5rem;
+  }
+  
+  
   
