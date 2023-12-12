@@ -5,6 +5,7 @@ import StickyHeadTable from "../../../components/SecoundForm/SecoundForm.jsx";
 import axios from "axios";
 import "../merchantTransactionPage/merchantTransactionPage.css";
 import { useUser } from "../../../../Context/useUser.jsx";
+import { GrTransaction } from "react-icons/gr";
 import DepositMoneyform from "../../../components/DepositMoneyForm/depositForm.jsx";
 import Transfermoneyform from "../../../components/transfermoneyform/transfermoneyform.jsx";
 
@@ -72,6 +73,7 @@ const MerchantTransactionPage = ({ rows }) => {
         <MercahntHeader
           name={data.firstName + " " + data.lastName}
           title="Transaction"
+          logo={GrTransaction}
         />
 
 <div className="transferanddeposit">

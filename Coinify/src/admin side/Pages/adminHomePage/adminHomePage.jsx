@@ -9,6 +9,7 @@ import { GrTransaction } from "react-icons/gr";
 import { BiSolidDiscount } from "react-icons/bi";
 import { useUser } from "../../../Context/useUser.jsx";
 import UserHeader from "../../../client side/components/home/userheader/userHeader.jsx";
+import { MdHome } from 'react-icons/md'; 
 
 import axios from "axios";
 const AdminHomePage = () => {
@@ -51,7 +52,7 @@ const AdminHomePage = () => {
     fetchPromotions();
     fetchUsers();
     fetchTransactions();
-  }, []);
+  }, [user]);
   const usersCount = users.filter((user) => user.role === "user").length;
   const merchantsCount = users.filter((user) => user.role === "merchant")
     .length;

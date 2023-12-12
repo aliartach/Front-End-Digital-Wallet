@@ -7,6 +7,7 @@ import Transfermoneyform from "../../../components/transfermoneyform/transfermon
 import "../usertransactionpage/usertransactionpage.css";
 import { useUser } from "../../../../Context/useUser.jsx";
 import DepositMoneyform from "../../../components/DepositMoneyForm/depositForm.jsx";
+import { GrTransaction } from "react-icons/gr";
 
 const Usertransactionpage = ({ rows, togglePop }) => {
   const [seen, setSeen] = useState(false);
@@ -66,7 +67,7 @@ const Usertransactionpage = ({ rows, togglePop }) => {
     <div className="userTransactionPage">
       <SideNavbar />
       <div className="userrightside">
-        <UserHeader />
+        <UserHeader logo={GrTransaction} title={"TRANSACTIONS"} />
         <div className="transferanddeposit">
           <div>
             <button

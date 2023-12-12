@@ -21,12 +21,7 @@
     border-radius: 20px;
 }
 
-.depositbutton {
-    height: 40px;
-    width: 100px;
-    cursor: pointer;
-    border-radius: 20px;
-}
+
 .transferbutton:hover {
     background-color: #aa9a49;
     color: white;
@@ -34,4 +29,10 @@
 .depositbutton:hover {
     background-color: #aa9a49;
     color: white;
+}
+.depositbutton {
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 20px;
 }

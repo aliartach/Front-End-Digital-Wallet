@@ -6,6 +6,7 @@ import axios from "axios";
 import { useUser } from "../../../../Context/useUser.jsx";
 import AddPromotionsForm from "../../../components/AddPromotion-Form/Promotion-Form.jsx";
 import PromotionTabel from "../../../../admin side/components/PromotionTabel/PromotionTabel.jsx";
+import { BiSolidDiscount } from "react-icons/bi";
 const MerchantPromotionsPage = ({ togglePopup, rows }) => {
   const [seen, setSeen] = useState(false);
   const { user } = useUser();
@@ -75,6 +76,7 @@ const MerchantPromotionsPage = ({ togglePopup, rows }) => {
         <MercahntHeader
           name={data.firstName + " " + data.lastName}
           title="Promotion"
+          logo={BiSolidDiscount}
         />
         {promotions.length > 0 && <PromotionTabel  rows={promotions} />}
       </div>

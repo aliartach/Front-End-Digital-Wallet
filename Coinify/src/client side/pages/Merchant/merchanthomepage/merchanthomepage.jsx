@@ -8,6 +8,7 @@ import { FaWallet } from "react-icons/fa";
 import { BiSend } from "react-icons/bi";
 import { MdCallReceived } from "react-icons/md";
 import { useUser } from "../../../../Context/useUser.jsx";
+import { MdHome } from 'react-icons/md'; 
 const Merchanthomepage = () => {
   const [data, setData] = useState([]);
   const { user, setUser } = useUser();
@@ -32,7 +33,7 @@ const Merchanthomepage = () => {
     <div className="merchantHomePage">
       <MerchantSideNavbar />
       <div className="MerchantHomePageRight">
-        <MercahntHeader name={data.firstName +" "+ data.lastName} title={"HOME"} />
+        <MercahntHeader name={data.firstName +" "+ data.lastName} logo={MdHome} title={"HOME"} />
         <div className="MercahntCards">
           <MercahntHomeCards type={"Balance USD"} amount={data.balanceUSD}>
             {" "}
@@ -49,7 +50,7 @@ const Merchanthomepage = () => {
             <BiSend className="walletlogo" />
           </MercahntHomeCards>
         </div>
-        <h1 className="UserTabel">{data.firstName} Tabel</h1>
+        <h1 className="UserTabel">{data.firstName} 's Profile</h1>
         <div className="TabelMain">
           <table className="MerchantTabel">
             <tr className="tr">

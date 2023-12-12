@@ -49,9 +49,7 @@ const UserHeader = ({ name, title }) => {
     return () => {
       socket?.off("getNotification", handleGetNotification);
     };
-  }, [socket]);
-
-  console.log("notifications", notifications);
+  }, [socket,user]);
 
   return (
     <div className="homepage1">
@@ -75,13 +73,15 @@ const UserHeader = ({ name, title }) => {
               <br></br>
             </>
             <h2 className="hellousername">HELLO {name} !</h2>
-            <h1>{notifications.length}</h1>
-            <IoIosNotifications
+      <div className="notificationDiv">
+      <IoIosNotifications
               className="notificationlogo"
               onClick={() => {
                 setOpenALL(!openALL);
               }}
             />
+            <h3 className="notificationNumber">{notifications.length}</h3>
+      </div>
           </header>
           <div className="homepagedescription">
             <MdHome className="homelogopage" /> <p>{title}</p>

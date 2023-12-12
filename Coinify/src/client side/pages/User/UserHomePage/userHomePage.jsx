@@ -8,6 +8,7 @@ import { MdCallReceived } from "react-icons/md";
 import axios from "axios";
 import './userHomePage.css'
 import { useUser } from "../../../../Context/useUser";
+import { MdHome } from 'react-icons/md'; 
 
 const userHomePage = () => {
   const [data, setData] = useState([]);
@@ -37,6 +38,7 @@ const userHomePage = () => {
         <Userheader
           name={data.firstName + " " + data.lastName}
           title={"HOME"}
+          logo={MdHome}
         />
         <div>
           <div className="grid-container">
@@ -66,23 +68,24 @@ const userHomePage = () => {
             </div>
           </div>
         </div>
-        <div className="usertable">
-          <table className="tableuserinfo">
-            <tr>
-              <td className="tduserinfo">First Name</td>
-              <td className="tduserinfo1">{data.firstName}</td>
+        <h1 className="UserTabel">{data.firstName} 's Profile</h1>
+        <div className="TabelMain">
+          <table className="MerchantTabel">
+            <tr className="tr">
+              <td className="F-NAME">First Name</td>
+              <td className="F-NAME">{data.firstName}</td>
             </tr>
-            <tr>
-              <td className="tduserinfo">Last Name</td>
-              <td className="tduserinfo1">{data.lastName} </td>
+            <tr className="tr">
+              <td className="L-NAME">Last Name</td>
+              <td className="L-NAME">{data.lastName} </td>
             </tr>
-            <tr>
-              <td className="tduserinfo">Email</td>
-              <td className="tduserinfo1">{data.email}</td>
+            <tr className="tr">
+              <td className="M-Email">Email</td>
+              <td className="M-Email">{data.email}</td>
             </tr>
-            <tr>
-              <td className="tduserinfo">Phone Number</td>
-              <td className="tduserinfo1">{data.phone}</td>
+            <tr className="tr">
+              <td className="PHONE-N">Phone Number</td>
+              <td className="PHONE-N">{data.phone}</td>
             </tr>
           </table>
         </div>

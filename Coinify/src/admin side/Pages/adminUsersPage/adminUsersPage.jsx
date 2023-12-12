@@ -8,6 +8,7 @@ import { useUser } from "../../../Context/useUser.jsx";
 import StickyHeadTableUSers from "../../components/SecoundFormUsers/SecoundForm.jsx";
 // import React from "react"
 import UserForm from "../../components/UserForm/usersForm.jsx";
+import { FaUsers } from "react-icons/fa";
 
 const AdminUsersPage = () => {
   const [users, setUsers] = useState([]);
@@ -26,7 +27,7 @@ const AdminUsersPage = () => {
     };
 
     fetchUsers();
-  }, []);
+  }, [user]);
   console.log("allUsers", users);
 
   return (
@@ -35,7 +36,7 @@ const AdminUsersPage = () => {
 
       <div className="AdminUsersPageContent">
         {" "}
-        <UserHeader  name={"Admin"} title={"USERS"} />
+        <UserHeader logo={FaUsers}  name={"Admin"} title={"USERS"} />
         <div>
           {" "}
         </div>

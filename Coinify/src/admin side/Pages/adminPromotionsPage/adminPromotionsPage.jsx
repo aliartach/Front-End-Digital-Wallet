@@ -6,6 +6,9 @@ import axios from "axios";
 import PromotionTabel from "../../components/PromotionTabel/PromotionTabel";
 import PromotionForm from "../../../client side/components/AddPromotion-Form/Promotion-Form";
 import { useUser } from "../../../Context/useUser";
+import { MdHome } from "react-icons/md";
+import { BiSolidDiscount } from "react-icons/bi";
+
 const AdminPromotionsPage = () => {
   const [promotions, setPromotions] = useState([]);
   const [seen, setSeen] = useState(false);
@@ -32,7 +35,7 @@ const AdminPromotionsPage = () => {
     };
 
     fetchPromotions();
-  }, [ref]);
+  }, [user,ref]);
   return (
     <div className="AdminPromotionsPage">
       <AdminSideNavbar />
@@ -47,7 +50,7 @@ const AdminPromotionsPage = () => {
           {seen ? (
             <PromotionForm toggle={togglePopup} userId={user?.id} newPromotions={newPromotion} />
           ) : null}
-        </div>        <UserHeader name={"admin"} title={"PROMOTIONS"} />
+        </div>        <UserHeader logo={BiSolidDiscount} name={"admin"} title={"PROMOTIONS"} />
 
         {promotions.length>0 && <PromotionTabel rows={promotions}/> }
       </div>

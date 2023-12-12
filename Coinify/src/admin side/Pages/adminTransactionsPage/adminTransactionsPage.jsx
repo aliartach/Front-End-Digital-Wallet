@@ -5,9 +5,12 @@ import UserHeader from "../../../client side/components/home/userheader/userHead
 import axios from "axios";
 import StickyHeadTable from "../../../client side/components/SecoundForm/SecoundForm";
 import TransactionForm from "../../components/TransactionForm/TransactionForm";
+import { GrTransaction } from "react-icons/gr";
+import { useUser } from "../../../Context/useUser";
 
 const AdminTransactionsPage = () => {
   const [transactions, setTransactions] = useState([]);
+  const {user}=useUser();
 
   useEffect(() => {
     const fetchTransactions = async () => {
@@ -24,7 +27,7 @@ const AdminTransactionsPage = () => {
     };
 
     fetchTransactions();
-  }, []);
+  }, [user]);
   console.log("allTransactions", transactions);
 
   return (
@@ -32,7 +35,7 @@ const AdminTransactionsPage = () => {
       <AdminSideNavbar />
       <div className="AdminTransactionsPageContent">
         {" "}
-        <UserHeader name={"Admin"} title={"TRANSACTIONS"} />
+        <UserHeader logo={GrTransaction} name={"Admin"} title={"TRANSACTIONS"} />
         {transactions.length > 0 && <TransactionForm rows={transactions} />}
       </div>
     </div>

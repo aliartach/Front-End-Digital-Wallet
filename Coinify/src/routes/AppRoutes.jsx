@@ -15,35 +15,29 @@ import MerchantPromotionPage from "../client side/pages/Merchant/merchantpormoti
 import Usertransactionpage from "../client side/pages/User/usertransactionpage/usertransactionpage.jsx";
 import Userpromotionpage from "../client side/pages/User/userpromotionpage/userpromotionpage.jsx";
 
+
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/Registerpage" element={<Registerpage />} />
 
-      <Route element={<ProtectedRoute allowedRoles={["user"]} />}>
+      {/* <Route element={<ProtectedRoute allowedRoles={["user"]} />}>
         <Route path="/userhomepage/" element={<UserHomePage />} />
-      </Route>
+      </Route> */}
       <Route path="/userhomepage/" element={<UserHomePage />} />
-      <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
+      {/* <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
         <Route path="/adminHomepage/" element={<AdminHomePage />} />
-      </Route>
+      </Route> */}
       <Route path="/adminHomepage/" element={<AdminHomePage />} />
       <Route path="/UserTranstionPage/" element={<Usertransactionpage />} />
-      <Route path="/Userpromotionpage/" element={<Userpromotionpage/>}/>
+      <Route path="/UserPromotionPage/" element={<Userpromotionpage/>}/>
 
 
 
       <Route element={<ProtectedRoute allowedRoles={["merchant", "user"]} />}>
-      <Route path="/UserTranstionPage/" element={<Usertransactionpage/>} />
+         <Route path="/UserTranstionPage/" element={<Usertransactionpage/>} />
       </Route>
-      
-
-
-      
-
-
-
 
       <Route path="/adminUserspage" element={<AdminUsersPage />} />
       <Route path="/adminPromotionspage" element={<AdminPromotionsPage />} />
@@ -52,9 +46,9 @@ const AppRoutes = () => {
         element={<AdminTransactionsPage />}
       />
       <Route path="/merchanthomepage/" element={<Merchanthomepage />} />
-      <Route element={<ProtectedRoute allowedRoles={["merchant"]} />}>
+      {/* <Route element={<ProtectedRoute allowedRoles={["merchant"]} />}>
         <Route path="/merchanthomepage/" element={<Merchanthomepage />} />
-      </Route>
+      </Route> */}
       <Route
         path="/merchantTransactionPage/"
         element={<MerchantTransactionPage />}
