@@ -22,14 +22,14 @@ const AppRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/Registerpage" element={<Registerpage />} />
 
-      {/* <Route element={<ProtectedRoute allowedRoles={["user"]} />}>
+      <Route element={<ProtectedRoute allowedRoles={["user"]} />}>
         <Route path="/userhomepage/" element={<UserHomePage />} />
-      </Route> */}
-      <Route path="/userhomepage/" element={<UserHomePage />} />
-      {/* <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
+      </Route>
+      {/* <Route path="/userhomepage/" element={<UserHomePage />} /> */}
+      <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
         <Route path="/adminHomepage/" element={<AdminHomePage />} />
-      </Route> */}
-      <Route path="/adminHomepage/" element={<AdminHomePage />} />
+      </Route>
+      {/* <Route path="/adminHomepage/" element={<AdminHomePage />} /> */}
       <Route path="/UserTranstionPage/" element={<Usertransactionpage />} />
       <Route path="/UserPromotionPage/" element={<Userpromotionpage/>}/>
 
@@ -45,10 +45,10 @@ const AppRoutes = () => {
         path="/adminTransactionspage"
         element={<AdminTransactionsPage />}
       />
-      <Route path="/merchanthomepage/" element={<Merchanthomepage />} />
-      {/* <Route element={<ProtectedRoute allowedRoles={["merchant"]} />}>
+      {/* <Route path="/merchanthomepage/" element={<Merchanthomepage />} /> */}
+      <Route element={<ProtectedRoute allowedRoles={["merchant"]} />}>
         <Route path="/merchanthomepage/" element={<Merchanthomepage />} />
-      </Route> */}
+      </Route>
       <Route
         path="/merchantTransactionPage/"
         element={<MerchantTransactionPage />}

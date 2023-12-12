@@ -1,12 +1,17 @@
-
 :root {
   --base-spacing-unit: 24px;
   --half-spacing-unit: calc(var(--base-spacing-unit) / 2);
+<<<<<<< HEAD
   --color-alpha: #1772FF;
   --color-form-highlight: #EEEEEE;
 }
 
 
+=======
+  --color-alpha: #1772ff;
+  --color-form-highlight: #eeeeee;
+}
+>>>>>>> b2738eb2c1fa7a80f02daae98db7d586fdfabfe3
 
 .container {
   display: flex;
@@ -14,7 +19,6 @@
   align-items: center;
   min-height: 40vh;
   margin-left: 4rem;
-  
 }
 
 .table {
@@ -58,7 +62,7 @@
   padding-right: var(--base-spacing-unit);
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: calc(-1 * var(--half-spacing-unit) * 1.5);
     color: white;
@@ -68,10 +72,10 @@
   }
 
   &.desc::after {
-    content: '(desc)';
+    content: "(desc)";
   }
 
   &.asc::after {
-    content: '(asc)';
+    content: "(asc)";
   }
 }

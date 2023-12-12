@@ -5,14 +5,18 @@ import { MdOutlineEmail } from "react-icons/md";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useUser } from "../../../Context/useUser";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../buyusdtform/buyusdtform.css"
+import "../buyusdtform/buyusdtform.css";
 
-const buymoneyform = ({ toggle, userData ,refreshPage}) => {
+const buymoneyform = ({userData}) => {
+  const{user}=useUser()
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState(0);
+  const [promoCode, setPromoCode] = useState("");
+
+  useEffect(()=>{},[user])
 
   const handleCreateTransaction = async (e) => {
     e.preventDefault();
@@ -27,13 +31,16 @@ const buymoneyform = ({ toggle, userData ,refreshPage}) => {
       return;
     }
     try {
+      console.log("abc",email,amount,promoCode,userData.id)
+
       const response = await axios.post(
         `http://localhost:4000/api/transactions`,
         {
           receiverEmail: email,
           amount,
-          moneyType: "usdt",
+          moneyType: "usd",
           senderId: userData.id,
+          promoCode:promoCode||null,
         }
       );
       console.log("RES", response);
@@ -41,7 +48,7 @@ const buymoneyform = ({ toggle, userData ,refreshPage}) => {
       if (response.status === 200) {
         setEmail("");
         setAmount(0);
-        refreshPage("ref");
+        // refreshPage("ref");
         toast.success(`Money Sent successfully.`, {
           position: "top-center",
           autoClose: 1000,
@@ -71,12 +78,12 @@ const buymoneyform = ({ toggle, userData ,refreshPage}) => {
               toggle();
             }}
           />
-          <h3 className="h3buymoney">buy money</h3>
+          <h3 className="h3buymoney">Buy USDT</h3>
           <GrTransaction className="transactionlogo1" />
         </div>
         <div className="hrbuymoneyform"></div>
         <div className="buymoneyheader email">
-          <label className="recieveremail">Enter Promo Code</label>
+          <label className="recieveremail">Enter Email</label>
           <MdOutlineEmail className="inputemailicon" />
           <input
             placeholder="Email-Address"
@@ -90,20 +97,34 @@ const buymoneyform = ({ toggle, userData ,refreshPage}) => {
         <br></br>
         <div className="buymoneyheader amount">
           <label className="recieveramount">Amount</label>
-          <RiMoneyDollarCircleFill className="inputmoneyicon" />
+          <RiMoneyDollarCircleFill className="inputmoneyicon1" />
           <input
             placeholder="Amount"
             value={amount}
-            className="inputmoneybuy"
+            className="inputmoneybuy2"
             type="number"
             onChange={(e) => setAmount(e.target.value)}
           ></input>
         </div>
+
         <div className="buymmoneybuttondiv">
-          <button className="buymoneybutton" type="submit">
+          <br></br>
+          <div className="buymoneyheader email">
+            <label className="recieveremail">Enter Promo Code</label>
+            <MdOutlineEmail className="inputemailicon" />
+            <input
+              placeholder="Promo-Code"
+              className="inputmoneybuy1"
+              type="text"
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
+            ></input>
+          </div>
+          
+        </div>
+        <button className="buymoneybutton" type="submit">
             buy
           </button>
-        </div>
       </form>
     </div>
   );
